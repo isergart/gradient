@@ -1,4 +1,4 @@
-{% load staticfiles flatpages pages news documents users %}
+{% load staticfiles flatpages pages news documents projects users %}
 <!doctype html>
 <html lang="en">
 
@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="{{ flatpage.page.description }}">
-    <meta name="keywords" content="{{ flatpage.page.tag }}">
+    <meta name="keywords" content="{{ pages.tag }}">
     <meta name="author" content="Соглашение сторон">
     <link rel="icon" href="{% static "page/favicon.ico" %}">
 
@@ -70,10 +70,10 @@
     <main role="main">
 
     <hr>
-    {% for landing in carousel %}
+    {% for pages in carousel %}
 
     {{ get_carousel }}
-        <li>q{{ flatpage.carousel.image }}<br>
+        <li>q{{ pages.carousel.image }}<br>
             {{ carousel.title }}<br>
             {{ carousel.descriptions }}<br>
             {{ carousel.link }}<br>

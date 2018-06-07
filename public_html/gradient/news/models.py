@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from users.models import User
-from page.models import Tag
+from pages.models import Tag
 from datetime import datetime
 import random
 from django.utils.encoding import python_2_unicode_compatible

@@ -14,7 +14,7 @@ class Tag(models.Model):
     cloud = models.BooleanField(verbose_name='отображать', default=False, help_text='Если указано, метка видна в облаке тегов.')
 
     class Meta:
-        db_table = 'page_tag'
+        db_table = 'pages_tag'
         verbose_name = 'метку'
         verbose_name_plural = 'ключевые слова'
         ordering = ['name']
@@ -35,7 +35,7 @@ class Carousel(models.Model):
     link = models.CharField('URL кнопки', max_length=200, blank=True, help_text='Если не указано, кнопка не отображается. Укажите URL адрес для кнопки. Пример: "/about/clients/"')
 
     class Meta:
-        db_table = 'page_carousel'
+        db_table = 'pages_carousel'
         verbose_name = 'слайд'
         verbose_name_plural = 'слайдер'
         ordering = ('order',)
@@ -53,7 +53,7 @@ class Snippet(models.Model):
     show= models.BooleanField('активировать', default=False, help_text="Если отмечено, сниппет будет работать")
 
     class Meta:
-        db_table = 'page_snippet'
+        db_table = 'pages_snippet'
         verbose_name = 'сниппет'
         verbose_name_plural = 'сниппет'
         ordering = ('title',)
@@ -74,7 +74,7 @@ class Page(FlatPage):
     parent = models.CharField('URL родителя', max_length=20, blank=True, help_text='Пример: /about/clients/. Здесь родителем является /about/. Убедитесь, что есть начальные и конечные слэши.')
 
     class Meta:
-        db_table = 'page_page'
+        db_table = 'pages_page'
         verbose_name = 'страницу'
         verbose_name_plural = 'страница'
         ordering = ('order',)

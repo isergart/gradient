@@ -4,6 +4,6 @@ from __future__ import unicode_literals
 from django.apps import AppConfig
 
 
-class DocumentConfig(AppConfig):
-    name = 'document'
+class DocumentsConfig(AppConfig):
+    name = 'documents'
     verbose_name = 'Документы v1.0'

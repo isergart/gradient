@@ -17,7 +17,7 @@ class Project(models.Model):
     pass
 
     class Meta:
-        db_table = 'project_project'
+        db_table = 'projects_project'
         verbose_name = 'объект'
         verbose_name_plural = 'обьект'
 
@@ -35,7 +35,7 @@ class Image(models.Model):
     project = models.ForeignKey(Project, related_name='project_image', verbose_name='галерея', on_delete=models.CASCADE, unique=False)
 
     class Meta:
-        db_table = 'project_image'
+        db_table = 'projects_image'
         verbose_name = 'изображение'
         verbose_name_plural = 'изображения'
         ordering = ['id']

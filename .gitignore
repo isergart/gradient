@@ -7,3 +7,4 @@ migrations/
 requirements.txt
 .htaccess
 index.wsgi
+__pycache__

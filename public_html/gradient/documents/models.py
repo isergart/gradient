@@ -14,7 +14,7 @@ class Vacancy(models.Model):
     show = models.BooleanField('отображать', default=False, help_text='Отображать вакансию на сайте')
 
     class Meta:
-        db_table = 'document_vacancy'
+        db_table = 'documents_vacancy'
         verbose_name = 'вакансию'
         verbose_name_plural = 'вакансия'
         ordering = ('added_date',)
@@ -34,7 +34,7 @@ class Partner(models.Model):
     show = models.BooleanField('отображать', default=False, help_text='Отображать партнера на сайте')
 
     class Meta:
-        db_table = 'document_partner'
+        db_table = 'documents_partner'
         verbose_name = 'партнера'
         verbose_name_plural = 'партнер'
         ordering = ('name',)
@@ -63,7 +63,7 @@ class Block(models.Model):
     category = models.CharField('тип блока:', max_length=1, choices=CATEGORY_CHOICES, default='a')
 
     class Meta:
-        db_table = 'document_block'
+        db_table = 'documents_block'
         verbose_name = 'блок'
         verbose_name_plural = 'сервис'
         ordering = ('id',)
@@ -91,7 +91,7 @@ class BlockImage(models.Model):
     category = models.CharField('тип блока:', max_length=1, choices=CATEGORY_CHOICES, default='a')
 
     class Meta:
-        db_table = 'document_blockimage'
+        db_table = 'documents_blockimage'
         verbose_name = 'блок'
         verbose_name_plural = 'отзывы и сертификаты'
         ordering = ('id',)
@@ -110,7 +110,7 @@ class Image(models.Model):
     block = models.ForeignKey(BlockImage, related_name='block_image', verbose_name='галерея', on_delete=models.CASCADE, unique=False)
 
     class Meta:
-        db_table = 'document_image'
+        db_table = 'documents_image'
         verbose_name = 'изображение'
         verbose_name_plural = 'изображения'
         ordering = ['id']
