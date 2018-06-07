@@ -1,11 +1,9 @@
 # Ignored files and folders
 
-#static/
-#media/
 migrations/
 *.sqlite3
 *.DS_Store
 *.pyc
-#requirements.txt
-#.htaccess
-#index.wsgi
+requirements.txt
+.htaccess
+index.wsgi

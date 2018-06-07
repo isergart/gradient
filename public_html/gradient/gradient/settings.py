@@ -36,8 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.flatpages',
     'django.contrib.sites',
+    'django.contrib.flatpages',
     'ckeditor',
     'ckeditor_uploader',
     'page',
@@ -132,9 +132,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR, "static"),
-   # '/Users/sergart/Documents/gradient/static/',
+   # '/Users/sergart/Documents/gradient/public_html/static/',
+   # '/home/c/cl184131/gradient/public_html/static/',
 ]
 # STATIC_ROOT = '/Users/sergart/Documents/gradient/static/'
+# STATIC_ROOT = '/home/c/cl184131/gradient/public_html/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATICFILES_FINDERS = (
 #     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -146,9 +148,12 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIAFILES_DIRS = [
   os.path.join(BASE_DIR, "media"),
+  # '/Users/sergart/Documents/gradient/public_html/media/',
    # '/home/c/cl184131/gradient/public_html/media/',
+
 ]
 MEDIA_ROOT = '/Users/sergart/Documents/gradient/media/'
+# MEDIA_ROOT = '/home/c/cl184131/gradient/public_html/media/'
 
 # Memcached config
 
