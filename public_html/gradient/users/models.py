@@ -5,7 +5,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.encoding import python_2_unicode_compatible
 from django.db.models.signals import post_save, pre_delete
-from .utils import *
+# from .utils import *
 
 
 # Create User model
@@ -34,16 +34,16 @@ class User(AbstractUser):
             self.avatar = 'users/default_user.jpg'
         super(User, self).save()
 
-        def get_thumbnail_html(self):
-            html = '<a class="image-picker" href="%s"><img src="%s" alt="%s"/></a>'
-            return html % (self.avatar.url, get_thumbnail_url(self.avatar.url), self.position)
-        get_thumbnail_html.short_description = 'thumbnail'
-        get_thumbnail_html.allow_tags = True
-
-        def post_save_handler(sender, **kwargs):
-            create_thumbnail(kwargs['instance'].avatar.path)
-        post_save.connect(post_save_handler, sender=User)
-
-        def pre_delete_handler(sender, **kwargs):
-            delete_thumbnail(kwargs['instance'].avatar.path)
-        pre_delete.connect(pre_delete_handler, sender=User)
+        # def get_thumbnail_html(self):
+        #     html = '<a class="image-picker" href="%s"><img src="%s" alt="%s"/></a>'
+        #     return html % (self.avatar.url, get_thumbnail_url(self.avatar.url), self.position)
+        # get_thumbnail_html.short_description = 'thumbnail'
+        # get_thumbnail_html.allow_tags = True
+        #
+        # def post_save_handler(sender, **kwargs):
+        #     create_thumbnail(kwargs['instance'].avatar.path)
+        # post_save.connect(post_save_handler, sender=User)
+        #
+        # def pre_delete_handler(sender, **kwargs):
+        #     delete_thumbnail(kwargs['instance'].avatar.path)
+        # pre_delete.connect(pre_delete_handler, sender=User)

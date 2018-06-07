@@ -87,7 +87,7 @@ class BlockImage(models.Model):
     content = models.TextField(verbose_name='содержание:', blank=True, help_text='Наполнение статьи.')
     image_button = models.ImageField(upload_to='uploads/%Y/%m/%d/',verbose_name='изображение', blank=True, help_text='Размер изображения не более 1Mб. Горизонтального вида')
     show_button = models.BooleanField('отображать', default=False, help_text='Если отмечено, страница будет показана в главном меню')
-    image = models.ForeignKey('Image', related_name='block_images', blank=True, null=True)
+    image = models.ForeignKey('Image', related_name='block_images', on_delete=models.CASCADE, blank=True, null=True)
     category = models.CharField('тип блока:', max_length=1, choices=CATEGORY_CHOICES, default='a')
 
     class Meta:

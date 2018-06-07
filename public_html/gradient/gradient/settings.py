@@ -131,8 +131,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, "static"),
-   # '/Users/sergart/Documents/gradient/public_html/static/',
+   # os.path.join(BASE_DIR, "static"),
+   '/Users/sergart/Documents/gradient/public_html/static/',
    # '/home/c/cl184131/gradient/public_html/static/',
 ]
 # STATIC_ROOT = '/Users/sergart/Documents/gradient/static/'
