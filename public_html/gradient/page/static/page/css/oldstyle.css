@@ -1,0 +1,1130 @@
+/* GRADIENT THEME VER 2.0
+/* Hosted http://gradnvrsk.ru
+/* ==========================
+/* Theme Author: Sergey Kovalchuk
+/* http://sergart.ru
+/* E-mail: info@sergart.ru
+/* Date Reliase: 2015/02/06
+/* ==========================
+
+/* CUSTOMIZE THE NAVBAR
+--------------------------------------------------- */
+
+.navbar-brand {
+    position: absolute;
+    margin: 2px 10px;
+    display: block;
+    text-indent: -9999em;
+    width: 155px;
+    height: 46px;
+    background-image: url('/images/other/logo.svg'), none;
+    background-size: contain;
+}
+
+.navbar-default {
+    background-color: rgba(255, 255, 255, 1);
+    /*font-family: Helvetica;*/
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    background-color: #CA4343;
+    color: #FFFFFF;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    color: #CA4343;
+}
+
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
+    background-color: #EFEFEF;
+    color: #333333;
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+        background-color: #CA4343;
+        color: #FFFFFF;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        /*color: #;*/
+        background-color: #FFFFFF;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+        background-color: #CA4343;
+        color: #FFFFFF;
+    }
+    , .navbar-default .navbar-nav .open .dropdown-menu>li>a:active, .navbar-default .navbar-nav .open .dropdown-menu>.active>a, .navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover, .navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus {
+        color: #;
+        background-color: #F4F4F4;
+    }
+    .navbar-default .navico {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-nav>li>a, .navbar>.container .navbar-brand, .navbar>.container-fluid {
+        padding: 16px 8px;
+        font-size: 12px;
+    }
+    .navbar-default .navico {
+        display: none;
+    }
+    .navbar-default {
+        background-color: rgba(255, 255, 255, .95);
+        /*font-family: Helvetica;*/
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-nav>li>a, .navbar>.container .navbar-brand, .navbar>.container-fluid {
+        padding: 16px 15px;
+        font-size: 12px;
+    }
+    .navbar-default .navico {
+        display: block;
+        margin-top: -3px;
+    }
+    .navbar-default {
+        background-color: rgba(255, 255, 255, .95);
+        /*font-family: Helvetica;*/
+    }
+}
+
+@media (min-width: 1199px) {
+    .navbar-nav>li>a, .navbar>.container .navbar-brand, .navbar>.container-fluid {
+        padding: 22px 17px;
+        font-size: 14px;
+    }
+    .navbar-brand {
+        margin: 5px 10px;
+        width: 188px;
+        height: 56px;
+    }
+    .navbar-default .navico {
+        display: block;
+        margin-top: -2px;
+    }
+    .navbar-default {
+        background-color: rgba(255, 255, 255, .95);
+        /*font-family: Helvetica;*/
+    }
+}
+
+/* CUSTOMIZE THE SPACE & CSPACE ZAZOR FROM TOP & NAVBAR
+--------------------------------------------------- */
+
+@media (max-width: 767px) {
+    .space {
+        margin-bottom: 65px;
+    }
+    .cspace {
+        margin-bottom: 50px;
+    }
+}
+
+@media (min-width: 768px) {
+    .space {
+        margin-bottom: 68px;
+    }
+    .cspace {
+        margin-bottom: 53px;
+    }
+}
+
+@media (min-width: 992px) {
+    .space {
+        margin-bottom: 68px;
+    }
+    .cspace {
+        margin-bottom: 53px;
+    }
+}
+
+@media (min-width: 1199px) {
+    .space {
+        margin-bottom: 70px;
+    }
+    .cspace {
+        margin-bottom: 65px;
+    }
+}
+
+/* CUSTOMIZE THE LINK & UL & GRAY LINK & THUMBNAILS
+--------------------------------------------------- */
+
+a {
+    color: #CA4343;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+}
+
+a:hover {
+    color: #802A2A;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-in;
+    text-decoration: none;
+    /*border-bottom: 1px dotted #C5C5C5;*/
+}
+
+.content ul li {
+    margin-left: -20px;
+}
+
+a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
+    border-color: #E6D0CD;
+}
+
+a.thumbnail:hover {
+    color: #;
+}
+
+.container-full {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.top-space {
+    margin-top: 60px;
+}
+
+.top-margin {
+    margin-top: 20px;
+}
+
+img.pull-right {
+    margin-left: 10px;
+}
+
+img.pull-left {
+    margin-right: 10px;
+}
+
+/* CUSTOMIZE THE YANDEX MAP
+--------------------------------------------------- */
+
+.map {
+    margin-bottom: -20px;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    color: #5a5a5a;
+}
+
+.footer {
+    padding-top: 20px;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+.container .text-muted {
+    margin: 20px 0;
+}
+
+/* CUSTOMIZE FOOTER
+--------------------------------------------------- */
+
+.footer1 {
+    background: #313131;
+    padding: 30px 0 0 0;
+    font-size: 12px;
+    color: #999;
+}
+
+.footer1 a {
+    color: #ccc;
+}
+
+.footer1 a:hover {
+    color: #fff;
+}
+
+.footer1 .widget {
+    margin-bottom: 30px;
+}
+
+.footer1 .widget-title {
+    font-size: 17px;
+    font-weight: bold;
+    color: #ccc;
+    margin: 0 0 20px;
+}
+
+.footer1 .entry-meta {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 0 0 35px 0;
+    padding: 2px 0;
+    color: #888888;
+    font-size: 12px;
+    font-size: 0.75rem;
+}
+
+.footer1 .entry-meta a {
+    color: #333333;
+}
+
+.footer1 .entry-meta .meta-in {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.footer2 {
+    background: #2A2A2A;
+    padding: 15px 0;
+    color: #777;
+    font-size: 12px;
+}
+
+.footer2 a {
+    color: #aaa;
+}
+
+.footer2 a:hover {
+    color: #fff;
+}
+
+.footer2 p {
+    margin: 0;
+}
+
+.widget-simplenav {
+    margin-left: -5px;
+}
+
+.widget-simplenav a {
+    margin: 0 5px;
+}
+
+/* CUSTOMIZE THE SERGART LOGO
+-------------------------------------------------- */
+
+.sergart {
+    margin-top: -3px;
+    margin-bottom: -10px;
+    display: block;
+    text-indent: -9999em;
+    width: 60px;
+    height: 30px;
+    background-image: url('/images/other/sergart.svg'), none;
+    background-size: contain;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);
+    -moz-opacity: 0.4;
+    -khtml-opacity: 0.4;
+    opacity: 0.4;
+}
+
+.sergart:hover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+
+.preview {
+    position: absolute;
+    margin-right: 0px;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+#carousel {
+    background-color: #CA4343;
+    height: auto;
+    border-radius: 0px;
+}
+
+/*#carousel img{ height: 300px;}*/
+
+.flex-caption {
+    margin-left: 40px;
+    margin-top: -80%;
+    right: 15%;
+    bottom: 20px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: left;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+}
+
+.flex-caption p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+@media (max-width: 550px) {
+    .flex-caption {
+        margin-top: 0px;
+        width: 85%;
+        height: 220px;
+    }
+    .flex-caption h1 {
+        font-size: 24px;
+        line-height: 20px;
+    }
+    .flex-caption p {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    #carousel img {
+        display: none;
+    }
+}
+
+@media (min-width: 650px) {
+    .flex-caption {
+        margin-top: 0px;
+        width: 85%;
+        height: 180px;
+    }
+    .flex-caption h1 {
+        font-size: 24px;
+        line-height: 20px;
+    }
+    .flex-caption p {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    #carousel img {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .flex-caption {
+        margin-top: -180px;
+        width: 50%;
+        height: 180px;
+    }
+    .flex-caption h1 {
+        font-size: 24px;
+        line-height: 20px;
+    }
+    .flex-caption p {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    #carousel img {
+        display: inline-block;
+    }
+}
+
+@media (min-width: 992px) {
+    .flex-caption {
+        margin-top: -226px;
+        width: 50%;
+        height: auto;
+    }
+    .flex-caption h1 {
+        font-size: 30px;
+        line-height: 28px;
+    }
+    .flex-caption p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+
+@media (min-width: 1199px) {
+    .flex-caption {
+        margin-top: -230px;
+        width: 50%;
+        height: 230px;
+    }
+    .flex-caption h1 {
+        font-size: 30px;
+        line-height: 28px;
+    }
+    .flex-caption p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .flex-caption img {
+        display: inline-block;
+    }
+}
+
+/* CUSTOMIZE THE MAIN JUMBOTRON
+-------------------------------------------------- */
+
+.side {
+    padding-top: 0px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    background-color: #CA4343;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 3px rgba(171, 41, 47, 1.0);
+    background-repeat: no-repeat;
+    background-size: 1000px;
+    background-position: center center;
+}
+
+@media (max-width: 768px) {
+    .side {
+        margin-top: -15px;
+        background-image: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .side {
+        margin-top: -15px;
+        background-image: url('/images/other/side.svg');
+        background-position: right 43% center;
+    }
+}
+
+@media (min-width: 992px) {
+    .side {
+        margin-top: -15px;
+        background-image: url('/images/other/side.svg');
+        background-position: right 50% center;
+    }
+}
+
+@media (min-width: 1199px) {
+    .side {
+        margin-top: -5px;
+        background-position: right 43% center;
+    }
+}
+
+.top {
+    margin-top: -20px;
+    padding-top: 30px;
+}
+
+.top h3 {
+    margin-top: 0px;
+}
+
+/* CUSTOMIZE THE PARTNER
+-------------------------------------------------- */
+
+.parthner {
+    display: inline-block;
+    width: 50%;
+    margin-left: 10px;
+    vertical-align: top;
+}
+
+.parthner p {
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 5px;
+}
+
+.parthner img {
+    max-width: 150px;
+}
+
+/* CUSTOMIZE THE GALLERY
+-------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .fancybox {
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 0px;
+        width: 18%;
+    }
+}
+
+@media (min-width: 768px) {
+    .fancybox {
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 0px;
+        width: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .fancybox {
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 0px;
+        width: auto;
+    }
+}
+
+@media (min-width: 1199px) {
+    .fancybox {
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 0px;
+        width: auto;
+    }
+}
+
+/* CUSTOMIZE THE SERTIFICATE
+-------------------------------------------------- */
+
+.doubles img {
+    display: inline-block;
+    margin: 20px;
+}
+
+.sertificate {
+    margin-bottom: 4px;
+}
+
+/* CUSTOMIZE THE PROJECT
+-------------------------------------------------- */
+
+.project h4 {
+    font-size: 16px;
+    margin-top: -10px;
+    margin-bottom: 0px;
+}
+
+.project p {
+    margin-bottom: -10px;
+    color: #CA7478;
+}
+
+.gblock {
+    background-color: #;
+}
+
+.gblock h4 {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .gblock p {
+        display: inline-block;
+        margin-top: 0px;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .gblock h4 {
+        text-align: left;
+    }
+    .gblock p {
+        display: inline-block;
+        margin-top: 0px;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: left;
+    }
+}
+
+/*  КНОПКИ НА РАЗДЕЛАХ С РАМКОЙ И АНИМАЦИЕЙ ЗАТЕМНЕНИЯ
+-------------------------------------------------- */
+
+.gbutton .col-md-3 {
+    display: inline-block;
+    min-height: 100px;
+}
+
+.gbutton img {
+    width: 768px;
+    display: inline-block;
+}
+
+.gbutton p {
+    display: inline-block;
+    margin-top: 0px;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: left;
+    color: #808080;
+}
+
+.mybutton img {
+    margin: 5px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.links .mybutton img, .nebutton img {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.mybutton:hover img, .nebutton img:hover {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+/*  АНИМАЦИЯ ЗАТЕМНЕНИЯ
+-------------------------------------------------- */
+
+.gungray {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.gungray:hover {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+/*  КНОПКИ НА РАЗДЕЛАХ С РАМКОЙ
+-------------------------------------------------- */
+
+.mybutton {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border-radius: 14px;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in;
+}
+
+.mybutton:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: #FAFAFA;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+/*  FIX ДЛЯ РАМКИ ГАЛЛЕРЕИ
+-------------------------------------------------- */
+
+.gborder {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*  ОПИСАНИЕ НОВОСТИ
+-------------------------------------------------- */
+
+.newcapt {
+    padding: 20px;
+}
+
+.newcapt p {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.newcapt h4 {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.nebutton {
+    background-color: #F5F5F5;
+    border-color: #F5F5F5;
+    border-radius: 14px;
+    margin-bottom: 0px;
+    color: #7A7A7A;
+}
+
+.nebutton:hover {
+    background-color: #FAFAFA;
+    border-color: #E4E4E4;
+}
+
+/*  СКРЫТИЕ РАЗДЕЛОВ
+-------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .hiddens {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .hiddens {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .hiddens {
+        display: inline-block;
+    }
+}
+
+@media (min-width: 1199px) {
+    .hiddens {
+        display: inline-block;
+    }
+}
+
+/*  КАРТИНКИ СЛАЙДЕРА ВЫПОЛНЕННЫХ РАБОТ
+-------------------------------------------------- */
+
+.smslide p {
+    color: #888888;
+    line-height: 14px;
+    font-size: 13px;
+}
+
+@media (max-width: 768px) {
+    img.slideg {
+        width: 440px;
+        height: auto;
+    }
+    /*.smslide h4{margin-top: 195px;}*/
+}
+
+@media (min-width: 768px) {
+    img.slideg {
+        width: 700px;
+        height: auto;
+    }
+    /*.smslide h4{margin-top: 295px;}*/
+}
+
+@media (min-width: 992px) {
+    img.slideg {
+        width: 274px;
+        height: auto;
+    }
+    /*.smslide h4{margin-top: 120px;}*/
+}
+
+@media (min-width: 1199px) {
+    img.slideg {
+        width: 340px;
+        height: auto;
+    }
+    /*.smslide h4{margin-top: 150px;}*/
+}
+
+/* FIX ДЛЯ ПАРАГРАФ ОПУБЛИКОВАНО
+-------------------------------------------------- */
+
+p.time {
+    margin-top: -10px;
+    margin-bottom: -5px;
+}
+
+/* СЛАЙДЕР ЛОГОТИПОВ ПАРТНЕРОВ НА ГЛАВНОЙ
+-------------------------------------------------- */
+
+.mainlogo {
+    width: 100%;
+    text-align: center;
+}
+
+/* РАЗДЕЛ НОВОСТНЫЕ АНОНСЫ
+-------------------------------------------------- */
+
+.newanonce {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.newanonce:hover {
+    background-color: #F5F5F5;
+    border-color: #F5F5F5;
+    border-radius: 14px;
+    /*margin-bottom: 0px;*/
+    color: #7A7A7A;
+}
+
+/* КАСТОМНЫЕ ДЖУМБОТРОНЫ
+-------------------------------------------------- */
+
+.gjumbo1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    background-color: #F5F5F5;
+}
+
+.gjumbo1 hr {
+    width: 100%;
+    /*border:none;*/
+    height: 1px;
+    background: #E0E0E0;
+}
+
+.gjumbo2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* АНИМАЦИЯ КНОПОК ХОЛОД
+-------------------------------------------------- */
+
+.icons {
+    display: block;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin: 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in-out;
+    background-size: cover;
+}
+
+.icons:hover {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .icons {
+        height: 216px;
+    }
+    .imgn {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .icons {
+        height: 280px;
+    }
+    .imgn {
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .icons {
+        height: 116px;
+    }
+    .imgn {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1199px) {
+    .icons {
+        height: 116px;
+    }
+    .imgn {
+        width: 100%;
+    }
+}
+
+.icartofel {
+    background-image: url('/images/other/icartofel.jpg');
+}
+
+.icartofel:hover {
+    background-image: url('/images/other/icartofel.jpg');
+}
+
+.ihraneniecartofel {
+    background-image: url('/images/other/ihraneniecartofel.jpg');
+}
+
+.ihraneniecartofel:hover {
+    background-image: url('/images/other/ihraneniecartofel.jpg');
+}
+
+.imorkov {
+    background-image: url('/images/other/imorkov.jpg');
+}
+
+.imorkov:hover {
+    background-image: url('/images/other/imorkov.jpg');
+}
+
+.ionion {
+    background-image: url('/images/other/ionion.jpg');
+}
+
+.ionion:hover {
+    background-image: url('/images/other/ionion.jpg');
+}
+
+.icabbage {
+    background-image: url('/images/other/icabbage.jpg');
+}
+
+.icabbage:hover {
+    background-image: url('/images/other/icabbage.jpg');
+}
+
+.icondit {
+    background-image: url('/images/other/icondit.jpg');
+}
+
+.icondit:hover {
+    background-image: url('/images/other/icondit.jpg');
+}
+
+.icanal {
+    background-image: url('/images/other/icanal.jpg');
+}
+
+.icanal:hover {
+    background-image: url('/images/other/icanal.jpg');
+}
+
+.icentr {
+    background-image: url('/images/other/icentr.jpg');
+}
+
+.icentr:hover {
+    background-image: url('/images/other/icentr.jpg');
+}
+
+.icentrhol {
+    background-image: url('/images/other/icentrhol.jpg');
+}
+
+.icentrhol:hover {
+    background-image: url('/images/other/icentrhol.jpg');
+}
+
+.icontrol {
+    background-image: url('/images/other/icontrol.jpg');
+}
+
+.icontrol:hover {
+    background-image: url('/images/other/icontrol.jpg');
+}
+
+.iotopl {
+    background-image: url('/images/other/iotopl.jpg');
+}
+
+.iotopl:hover {
+    background-image: url('/images/other/iotopl.jpg');
+}
+
+.irgs {
+    background-image: url('/images/other/irgs.jpg');
+}
+
+.irgs:hover {
+    background-image: url('/images/other/irgs.jpg');
+}
+
+.iterm {
+    background-image: url('/images/other/iterm.jpg');
+}
+
+.iterm:hover {
+    background-image: url('/images/other/iterm.jpg');
+}
+
+.itextil {
+    background-image: url('/images/other/itextil.jpg');
+}
+
+.itextil:hover {
+    background-image: url('/images/other/itextil.jpg');
+}
+
+.ivent {
+    background-image: url('/images/other/ivent.jpg');
+}
+
+.ivent:hover {
+    background-image: url('/images/other/ivent.jpg');
+}
+
+.ivoda {
+    background-image: url('/images/other/ivoda.jpg');
+}
+
+.ivoda:hover {
+    background-image: url('/images/other/ivoda.jpg');
+}
+
+.links {
+    text-align: center;
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.links:hover {
+    border-radius: 14px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.links span {
+    padding: 10px;
+    font-size: 40px;
+}
+
+.maineme h3 {
+    color: #7777;
+    font-size: 20px;
+    margin-bottom: 2px;
+}

@@ -1,0 +1,197 @@
+{% load staticfiles flatpages pages news documents users %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{{ flatpage.page.description }}">
+    <meta name="keywords" content="{{ flatpage.page.tag }}">
+    <meta name="author" content="Соглашение сторон">
+    <link rel="icon" href="{% static "page/favicon.ico" %}">
+
+    <title>{% block titles %}Компания Градиент - {{ flatpage.title }}{% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "page/css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static "page/css/style.css" %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="/">Градиент</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Site navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+        {% get_flatpages as flatpages %}
+            <ul class="navbar-nav mr-auto">
+            {% for page in flatpages %}
+                {% if page.page.show == 1 %}
+
+                    {% if page.id == flatpage.id %}
+                        <li class="nav-item active">
+                                <a class="nav-link disabled">{{ page.title }}<span class="sr-only">(current)</span></a>
+                    {% else %}
+                        <li class="nav-item">
+                            {% if page.page.publishied == 1 %}
+                                <a class="nav-link" href="{{ page.url }}">{{ page.title }}<span class="sr-only">(current)</span></a>
+                            {% else %}
+                                <a class="nav-link disabled">{{ page.title }}<span class="sr-only">(current)</span></a>
+                            {% endif %}
+                    {% endif %}
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown07">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+
+          </ul>
+          <form class="form-inline my-2 my-md-0">
+            <input class="form-control" type="text" placeholder="Поиск" aria-label="Search">{% csrf_token %}
+          </form>
+        </div>
+      </div>
+    </nav>
+
+
+    <main role="main">
+
+    <hr>
+    {% for landing in carousel %}
+
+    {{ get_carousel }}
+        <li>q{{ flatpage.carousel.image }}<br>
+            {{ carousel.title }}<br>
+            {{ carousel.descriptions }}<br>
+            {{ carousel.link }}<br>
+        </li>
+    {% endfor %}
+    <hr>
+
+
+        {% if flatpage.carousel %}
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+
+
+        {% if flatpage.carousel == True %}
+          <div class="carousel-item active">
+            <img class="first-slide" src="{% static "landing/img/gradBannerService.jpg" %}" alt="First slide">
+            <div class="container">
+              <div class="carousel-caption text-left">
+                <h1>Example headline.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
+              </div>
+            </div>
+          </div>
+          {% else %} {% endif %}
+
+
+
+          <!-- <div class="carousel-item">
+            <img class="second-slide" src="{% static "gradient/img/gradBannerIngeneer.jpg" %}" alt="Second slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Another example headline.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
+                <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
+              <!-- </div>
+            </div>
+          </div> -->
+          <!-- <div class="carousel-item">
+            <img class="third-slide" src="{% static "gradient/img/gradBannerSeti.jpg" %}" alt="Third slide">
+            <div class="container">
+              <div class="carousel-caption text-right">
+                <h1>One more for good measure.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
+                <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> -->
+              <!-- </div>
+            </div>
+          </div> -->
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      {% else %} {% endif %}
+
+
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3">{% block title %}{{ flatpage.title }}{% endblock %}</h1>
+                <p>{% block description %}{{ flatpage.page.description }}{% endblock %}</p>
+            </div>
+        </div>
+
+        <!-- Block for a secondary marketing message or call to action -->
+        {% if flatpage.page.block %}
+        <div class="block">
+            <div class="container">
+                {{ flatpage.page.block|safe }}
+            </div>
+        </div>
+        {% else %} {% endif %}
+
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="lead">{% block content %}{{ flatpage.content }}{% endblock %}<p>
+                    <p>{% tag %}</p>
+                    <p>{% users %}</p>
+                    <p>{% partners %}</p>
+                    <p>{% carousel %}</p>
+                    <p>{% snippet %}</p>
+                    <p>{% news %}</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- /container -->
+
+    </main>
+
+    <!-- Begin footer content -->
+    <footer class="footer">
+        <div class="container">
+            <p>2010 - {% now "Y" %}&nbsp;&copy;&nbsp;ООО Градиент &#124; <a href="/agreement">Соглашение</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="{% static "page/js/vendor/jquery-slim.min.js" %}"><\/script>')
+    </script>
+    <script src="{% static "page/js/vendor/popper.min.js" %}"></script>
+    <script src="{% static "page/js/bootstrap.min.js" %}"></script>
+</body>
+
+</html>
