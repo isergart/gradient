@@ -8,15 +8,15 @@
     <meta name="description" content="{{ flatpage.page.description }}">
     <meta name="keywords" content="{{ pages.tag }}">
     <meta name="author" content="Соглашение сторон">
-    <link rel="icon" href="{% static "page/favicon.ico" %}">
+    <link rel="icon" href="{% static "pages/favicon.ico" %}">
 
     <title>{% block titles %}Компания Градиент - {{ flatpage.title }}{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{% static "page/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "pages/css/bootstrap.min.css" %}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="{% static "page/css/style.css" %}" rel="stylesheet">
+    <link href="{% static "pages/css/style.css" %}" rel="stylesheet">
 </head>
 
 <body>
@@ -188,10 +188,10 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>
-        window.jQuery || document.write('<script src="{% static "page/js/vendor/jquery-slim.min.js" %}"><\/script>')
+        window.jQuery || document.write('<script src="{% static "pages/js/vendor/jquery-slim.min.js" %}"><\/script>')
     </script>
-    <script src="{% static "page/js/vendor/popper.min.js" %}"></script>
-    <script src="{% static "page/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "pages/js/vendor/popper.min.js" %}"></script>
+    <script src="{% static "pages/js/bootstrap.min.js" %}"></script>
 </body>
 
 </html>
