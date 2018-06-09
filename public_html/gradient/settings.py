@@ -50,9 +50,9 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.cache.UpdateCacheMiddleware',
+    # 'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
+    # 'django.middleware.cache.FetchFromCacheMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -134,25 +134,14 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-   #'/Users/sergart/Documents/gradient/public_html/static/',
-   # '/home/c/cl184131/gradient/public_html/static/',
 ]
-# STATIC_ROOT = '/Users/sergart/Documents/gradient/static/'
 # STATIC_ROOT = '/home/c/cl184131/gradient/public_html/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATICFILES_FINDERS = (
-#     'django.contrib.staticfiles.finders.FileSystemFinder',
-#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-# )
 
 # Media files
 
 MEDIA_URL = '/media/'
 MEDIAFILES_DIRS = [
   os.path.join(BASE_DIR, "media"),
-  # '/Users/sergart/Documents/gradient/public_html/media/',
-   # '/home/c/cl184131/gradient/public_html/media/',
-
 ]
 MEDIA_ROOT = '/Users/sergart/Documents/gradient/public_html/media/'
 # MEDIA_ROOT = '/home/c/cl184131/gradient/public_html/media/'
@@ -160,11 +149,11 @@ MEDIA_ROOT = '/Users/sergart/Documents/gradient/public_html/media/'
 # Memcached config
 
 # CACHES = {
-#   'default': {
-#         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-#         'LOCATION': '127.0.0.1:11211',
-#   }
-# }
+#    'default': {
+#          'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+#          'LOCATION': '127.0.0.1:11211',
+#    }
+#  }
 
 # CKEditor config
 
