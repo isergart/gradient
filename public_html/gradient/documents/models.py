@@ -47,16 +47,16 @@ class Partner(models.Model):
 @python_2_unicode_compatible
 class Block(models.Model):
     CATEGORY_CHOICES = (
-        ('a', 'Промышленное холодоснабжение'),
-        ('b', 'Внутренние инженерные системы'),
-        ('c', 'Фруктохранилище'),
-        ('d', 'Овощехранилище'),
-        ('e', 'Cправочная информация'),
-        ('f', 'Cервисное обслуживание'),
-        ('g', 'Сертификаты'),
-        ('h', 'Свидетельства'),
-        ('i', 'Отзывы'),
-        ('j', 'Письма'),
+        ('1', 'Промышленное холодоснабжение'),
+        ('2', 'Внутренние инженерные системы'),
+        ('3', 'Фруктохранилище'),
+        ('4', 'Овощехранилище'),
+        ('5', 'Cправочная информация'),
+        ('6', 'Cервисное обслуживание'),
+        ('7', 'Сертификаты'),
+        ('8', 'Свидетельства'),
+        ('9', 'Отзывы'),
+        ('10', 'Письма'),
     )
     title = models.CharField(max_length=100, verbose_name='заголовок:', help_text='Не более 100 символов (включая пробелы)')
     description = models.CharField('описание:', max_length=2000, blank=False, help_text='SEO поле предназначено для мета-тега description')
@@ -65,7 +65,7 @@ class Block(models.Model):
     image_button = models.ImageField(upload_to='uploads/%Y/%m/%d/',verbose_name='изображение', blank=True, help_text='Размер изображения не более 1Mб. Горизонтального вида')
     show_button = models.BooleanField('отображать', default=False, help_text='Если отмечено, страница будет показана в главном меню')
     image = models.ForeignKey('Image', related_name='block_images', on_delete=models.CASCADE, blank=True, null=True)
-    category = models.CharField('тип блока:', max_length=1, choices=CATEGORY_CHOICES, default='a')
+    category = models.CharField('тип блока:', max_length=1, choices=CATEGORY_CHOICES, default='1')
 
     class Meta:
         db_table = 'documents_block'
