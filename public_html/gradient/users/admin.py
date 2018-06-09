@@ -12,7 +12,7 @@ class UserAdmin(admin.ModelAdmin):
         (None, {
         'fields': ('username', 'password', 'show')}),
         ('Персональная информация', {
-        'fields': ('avatar', 'last_name', 'first_name', 'third_name', 'position', 'email', 'phone',)}),
+        'fields': ('avatar', 'first_name', 'third_name', 'last_name', 'position', 'email', 'phone',)}),
         ('Права доступа', {
         'classes': ('collapse',),
         'fields': ('is_active', 'is_staff', 'is_superuser','groups', 'user_permissions')}),

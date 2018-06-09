@@ -6,4 +6,4 @@ from django.apps import AppConfig
 
 class ProjectsConfig(AppConfig):
     name = 'projects'
-    verbose_name = "Проекты v1.0"
+    verbose_name = "Проекты v0.1"

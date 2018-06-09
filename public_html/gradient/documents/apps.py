@@ -6,4 +6,4 @@ from django.apps import AppConfig
 
 class DocumentsConfig(AppConfig):
     name = 'documents'
-    verbose_name = 'Документы v1.0'
+    verbose_name = 'Документы v0.1'

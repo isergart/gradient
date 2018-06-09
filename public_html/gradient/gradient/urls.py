@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.conf import settings
-# from django.contrib.flatpages import views
 
 from django.conf.urls import url, include
 from django.contrib import admin
@@ -24,6 +23,4 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
-    # url(r'^pages/', include('django.contrib.flatpages.urls')),
-    # url(r'^$news/', views.flatpage, {'url': '/news/'}, name = 'news'),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

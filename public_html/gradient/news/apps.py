@@ -6,4 +6,4 @@ from django.apps import AppConfig
 
 class NewsConfig(AppConfig):
     name = 'news'
-    verbose_name = "Новости v1.0"
+    verbose_name = "Новости v0.1"

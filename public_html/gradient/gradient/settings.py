@@ -152,7 +152,7 @@ MEDIAFILES_DIRS = [
    # '/home/c/cl184131/gradient/public_html/media/',
 
 ]
-MEDIA_ROOT = '/Users/sergart/Documents/gradient/media/'
+MEDIA_ROOT = '/Users/sergart/Documents/gradient/public_html/media/'
 # MEDIA_ROOT = '/home/c/cl184131/gradient/public_html/media/'
 
 # Memcached config

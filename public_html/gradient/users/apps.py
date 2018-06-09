@@ -6,4 +6,4 @@ from django.apps import AppConfig
 
 class UsersConfig(AppConfig):
     name = 'users'
-    verbose_name = "Пользователи v1.0"
+    verbose_name = "Пользователи v0.1"
