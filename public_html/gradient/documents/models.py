@@ -53,33 +53,10 @@ class Block(models.Model):
         ('d', 'Овощехранилище'),
         ('e', 'Cправочная информация'),
         ('f', 'Cервисное обслуживание'),
-    )
-    title = models.CharField(max_length=100, verbose_name='заголовок:', help_text='Не более 100 символов (включая пробелы)')
-    description = models.CharField('описание:', max_length=2000, blank=False, help_text='SEO поле предназначено для мета-тега description')
-    teaser = models.TextField(max_length=200, verbose_name='аннотация:', blank=True, help_text='Не обязательное поле! Заполните краткое описание поста. Не более 200 символов (включая пробелы).<br> Если оставить пустым, то возьмутся первые 200 символов из содержания статьи')
-    content = models.TextField(verbose_name='содержание:', blank=True, help_text='Наполнение статьи.')
-    image_button = models.ImageField(upload_to='uploads/%Y/%m/%d/',verbose_name='изображение', blank=True, help_text='Размер изображения не более 1Mб. Горизонтального вида')
-    show_button = models.BooleanField('отображать', default=False, help_text='Если отмечено, страница будет показана в главном меню')
-    category = models.CharField('тип блока:', max_length=1, choices=CATEGORY_CHOICES, default='a')
-
-    class Meta:
-        db_table = 'documents_block'
-        verbose_name = 'блок'
-        verbose_name_plural = 'сервис'
-        ordering = ('id',)
-
-    def __str__(self):
-        return '%s' % self.id
-
-
-# Create BlockImage model
-@python_2_unicode_compatible
-class BlockImage(models.Model):
-    CATEGORY_CHOICES = (
-        ('a', 'Сертификаты'),
-        ('b', 'Свидетельства'),
-        ('c', 'Отзывы'),
-        ('d', 'Письма'),
+        ('g', 'Сертификаты'),
+        ('h', 'Свидетельства'),
+        ('i', 'Отзывы'),
+        ('j', 'Письма'),
     )
     title = models.CharField(max_length=100, verbose_name='заголовок:', help_text='Не более 100 символов (включая пробелы)')
     description = models.CharField('описание:', max_length=2000, blank=False, help_text='SEO поле предназначено для мета-тега description')
@@ -91,9 +68,9 @@ class BlockImage(models.Model):
     category = models.CharField('тип блока:', max_length=1, choices=CATEGORY_CHOICES, default='a')
 
     class Meta:
-        db_table = 'documents_blockimage'
+        db_table = 'documents_block'
         verbose_name = 'блок'
-        verbose_name_plural = 'отзывы и сертификаты'
+        verbose_name_plural = 'документ'
         ordering = ('id',)
 
     def __str__(self):
@@ -107,7 +84,7 @@ class Image(models.Model):
     description = models.CharField('описание:', max_length=2000, blank=False, help_text='SEO поле предназначено для мета-тега description')
     image = models.ImageField('изображение', upload_to='uploads/%Y/%m/%d/', blank=True, help_text='Размер изображения не более 1Mб. Горизонтального вида')
     watermark = models.BooleanField('защита', default=0, help_text='Добавляется водяной знак на фотографию')
-    block = models.ForeignKey(BlockImage, related_name='block_image', verbose_name='галерея', on_delete=models.CASCADE, unique=False)
+    block = models.ForeignKey(Block, related_name='block_image', verbose_name='галерея', on_delete=models.CASCADE, unique=False)
 
     class Meta:
         db_table = 'documents_image'

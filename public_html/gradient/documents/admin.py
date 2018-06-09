@@ -18,8 +18,3 @@ class PartnerAdmin(admin.ModelAdmin):
 @admin.register(Block)
 class BlockAdmin(admin.ModelAdmin):
     pass
-
-
-@admin.register(BlockImage)
-class BlockImageAdmin(admin.ModelAdmin):
-    pass

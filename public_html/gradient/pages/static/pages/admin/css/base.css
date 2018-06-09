@@ -520,7 +520,8 @@ input[type=button][disabled].default {
     font-weight: 400;
     font-size: 13px;
     text-align: left;
-    background: #e88c6e;;
+    background: #e88c6e;
+    background: linear-gradient(45deg, #cf543e, #e88c6e);
     color: #fff;
 }
 
@@ -847,11 +848,11 @@ table#change-history tbody th {
     margin: 0 20px 0 0;
     font-weight: 300;
     font-size: 24px;
-    color: #ffc;
+    color: #fff;
 }
 
 #branding h1, #branding h1 a:link, #branding h1 a:visited {
-    color: #ffc;
+    color: #fff;
 }
 
 #branding h2 {
