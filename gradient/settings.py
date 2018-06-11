@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.flatpages',
     'ckeditor',
-    'ckeditor_uploader',
     'pages',
     'users',
     'news',
@@ -143,7 +142,7 @@ MEDIA_URL = '/media/'
 MEDIAFILES_DIRS = [
   os.path.join(BASE_DIR, "media"),
 ]
-MEDIA_ROOT = '/Users/sergart/Documents/gradient/public_html/media/'
+MEDIA_ROOT = '/Users/sergart/Documents/gradient/media/'
 # MEDIA_ROOT = '/home/c/cl184131/gradient/public_html/media/'
 
 # Memcached config
