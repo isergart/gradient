@@ -8,3 +8,5 @@ requirements.txt
 .htaccess
 index.wsgi
 __pycache__
+README.md
+LICENSE
