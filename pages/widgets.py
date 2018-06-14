@@ -73,16 +73,16 @@ class CKEditor(forms.Textarea):
         if value is None:
             value = ''
         final_attrs = self.build_attrs(self.attrs, attrs, name=name)
-        external_plugin_resources = [[force_text(a), force_text(b), force_text(c)]
-                                     for a, b, c in self.external_plugin_resources]
-
-        return mark_safe(render_to_string('pages/tpl_ckeditor.html', {
+        template_name = 'pages/tpl_ckeditor.html'
+        external_plugin_resources = [[force_text(a), force_text(b), force_text(c)]for a, b, c in self.external_plugin_resources]                                     
+        context = {
             'final_attrs': flatatt(final_attrs),
             'value': conditional_escape(value),
             'id': final_attrs['id'],
             'config': json_encode(self.config),
-            'external_plugin_resources': json_encode(external_plugin_resources)
-        }))
+            'external_plugin_resources': json_encode(external_plugin_resources)    
+        }
+        return mark_safe(render_to_string(template_name, context))
 
     def build_attrs(self, base_attrs, extra_attrs=None, **kwargs):
         attrs = dict(base_attrs, **kwargs)
