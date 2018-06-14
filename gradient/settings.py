@@ -38,20 +38,18 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.flatpages',
-    'ckeditor',
+    'documents',
     'pages',
     'users',
-    'news',
-    'documents',
-    'projects',
+    'feeds',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.cache.UpdateCacheMiddleware',
+    # 'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
+    # 'django.middleware.cache.FetchFromCacheMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -153,28 +151,3 @@ MEDIA_ROOT = '/Users/sergart/Documents/gradient/media/'
 #          'LOCATION': '127.0.0.1:11211',
 #    }
 #  }
-
-# CKEditor config
-
-CKEDITOR_UPLOAD_PATH = "uploads/"
-CKEDITOR_IMAGE_BACKEND = "pillow"
-CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
-CKEDITOR_CONFIGS = {
-    'default': {
-        'removePlugins': ','.join([
-            'stylesheetparser',
-    ]),
-        'extraPlugins': ','.join([
-            'uploadimage',
-    ]),
-        'allowedContent': True,
-        'height': 200,
-        # 'skin': 'moono',
-        'toolbar_Full': [
-            ['Undo', 'Redo', '-', 'Bold', 'Italic', '-', 'NumberedList', 'BulletedList', 'Format', 'RemoveFormat'],
-            ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'],
-            ['Link', 'Unlink','Anchor', 'Image', 'HorizontalRule'],
-            ['Templates','Templates2', 'ShowBlocks', 'Source', '-', 'Maximize'],
-    ],
-    },
-}

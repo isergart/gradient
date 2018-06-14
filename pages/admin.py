@@ -3,14 +3,14 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 from django.contrib.flatpages.admin import FlatPageAdmin
-from ckeditor_uploader.widgets import CKEditorUploadingWidget
-from .widgets import *
+from .widgets import CKEditor
 from .models import *
 
 
 # Create new TagAdmin
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
+    model = Tag
     list_display = ('name', 'cloud',)
     ordering = ('-name',)
     prepopulated_fields = {'slug': ['name']}
@@ -22,20 +22,11 @@ class TagAdmin(admin.ModelAdmin):
 class CarouselAdmin(admin.ModelAdmin):
     pass
 
-
 # Create new CarouselAdmin
 @admin.register(Snippet)
 class SnippetAdmin(admin.ModelAdmin):
     pass
-
-
-# Use CKEditor if available
-try:
-    from ckeditor_uploader.widgets import CKEditorUploadingWidget as content_widget
-except ImportError:
-    content_widget = models.TextField
-
-
+    
 # Define a new FlatPageAdmin
 @admin.register(Page)
 class FlatPageAdmin(FlatPageAdmin):
@@ -47,7 +38,7 @@ class FlatPageAdmin(FlatPageAdmin):
         }),
     )
     formfield_overrides = {
-        models.TextField: {'widget': content_widget }
+        models.TextField: {'widget': CKEditor }
     }
     list_display = ('title', 'show', 'url','parent',)
     list_filter = ('sites', )

@@ -15,7 +15,7 @@ class Tag(models.Model):
 
     class Meta:
         db_table = 'pages_tag'
-        verbose_name = 'метку'
+        verbose_name = 'тег'
         verbose_name_plural = 'ключевые слова'
         ordering = ['name']
 
@@ -37,7 +37,7 @@ class Carousel(models.Model):
     class Meta:
         db_table = 'pages_carousel'
         verbose_name = 'слайд'
-        verbose_name_plural = 'слайдер'
+        verbose_name_plural = 'карусель'
         ordering = ('order',)
 
     def __str__(self):

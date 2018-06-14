@@ -1,0 +1,9 @@
+{% load static %}
+<div class="django-ckeditor-widget" data-field-id="{{id}}" style="display: inline-block;">
+    <textarea{{ final_attrs }} data-processed="0" data-config="{{ config }}" data-external-plugin-resources="{{ external_plugin_resources }}" data-id="{{id}}" data-type="ckeditortype">{{ value }}</textarea>
+</div>
+
+<!-- <div style=" max-width: 100px;">
+        <textarea name="{{ widget.name }}" {% include "pages/tpl_attrs.html" %}>{% if widget.value %}{{ widget.value }}{% endif %}</textarea>
+</div>
+<script>initSample();</script> -->
