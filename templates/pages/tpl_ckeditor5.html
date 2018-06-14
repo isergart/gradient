@@ -1,3 +1,0 @@
-{% load static %}
-<script src="{% static "pages/ckeditor5/ckeditor_init.js" %}"></script>
-<div class="grid-width-60"><textarea name="{{ widget.name }}" {% include "pages/tpl_attrs.html" %}>{% if widget.value %}{{ widget.value }}{% endif %}</textarea></div>

@@ -25,26 +25,23 @@ DEFAULT_CONFIG = {
                 ['Templates','Templates2', 'ShowBlocks', 'Source', '-', 'Maximize', ],
         ],
     'toolbar': 'Full', #Basic
-    'removePlugins': ','.join([
-                'stylesheetparser',
-        ]),
-            'extraPlugins': ','.join([
-                'uploadimage',
-        ]),
+    # 'removePlugins': ','.join([
+    #             'stylesheetparser',
+    #     ]),
+    #         'extraPlugins': ','.join([
+    #             'uploadimage',
+    #     ]),
     'allowedContent': True,
-    'height': 200,
-    'width': 800,
-    'filebrowserWindowWidth': 940,
-    'filebrowserWindowHeight': 725,
+    # 'height': 200,
+    # 'width': 800,
+    # 'filebrowserWindowWidth': 940,
+    # 'filebrowserWindowHeight': 725,
 }
 
 
 class CKEditor(forms.Textarea):        
     class Media:
-        js = (
-            'pages/ckeditor/ckeditor-init.js',
-            'pages/ckeditor/ckeditor.js'
-        )
+        js = ('pages/ckeditor/ckeditor-init.js','pages/ckeditor/ckeditor.js')
 
     def __init__(self, config_name='default', extra_plugins=None, external_plugin_resources=None, *args, **kwargs):
         super(CKEditor, self).__init__(*args, **kwargs)
@@ -76,27 +73,5 @@ class CKEditor(forms.Textarea):
         if extra_attrs:
             attrs.update(extra_attrs)
         return attrs
-
-
-class CKEditor5(forms.Textarea):
-    template_name = 'pages/tpl_ckeditor5.html'
-    def __init__(self, attrs=None):
-        default_attrs = {'id': "editor"}
-        if attrs:
-            default_attrs.update(attrs)
-        super(CKEditor, self).__init__(default_attrs)
-        
-    class Media:
-        css = {'all': ('pages/ckeditor5/ckeditor.css',)}
-        js = ('pages/ckeditor5/ckeditor.js',)
-        
-        
-
-class Tinimceditor(forms.Textarea):
-    class Media:
-        js = (
-            'pages/tinymce/tinymce.min.js',
-            'pages/tinymce/tinymce-init.js',
-            )
-
+            
     
