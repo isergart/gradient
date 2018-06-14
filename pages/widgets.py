@@ -41,7 +41,7 @@ DEFAULT_CONFIG = {
 
 class CKEditor(forms.Textarea):        
     class Media:
-        js = ('pages/ckeditor/ckeditor-init.js','pages/ckeditor/ckeditor.js')
+        js = ('pages/ckeditor/ckeditor_init.js','pages/ckeditor/ckeditor.js')
 
     def __init__(self, config_name='default', extra_plugins=None, external_plugin_resources=None, *args, **kwargs):
         super(CKEditor, self).__init__(*args, **kwargs)
