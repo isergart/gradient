@@ -10,6 +10,3 @@ index.wsgi
 __pycache__
 README.md
 LICENSE
-django_cleanup/
-ckeditor_uploader/
-thumbnail/
