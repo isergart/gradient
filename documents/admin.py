@@ -18,4 +18,3 @@ class PartnerAdmin(admin.ModelAdmin):
 @admin.register(Block)
 class BlockAdmin(admin.ModelAdmin):
     pass
-    
