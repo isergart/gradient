@@ -22,11 +22,13 @@ class TagAdmin(admin.ModelAdmin):
 class CarouselAdmin(admin.ModelAdmin):
     pass
 
+
 # Create new CarouselAdmin
 @admin.register(Snippet)
 class SnippetAdmin(admin.ModelAdmin):
     pass
-    
+
+
 # Define a new FlatPageAdmin
 @admin.register(Page)
 class FlatPageAdmin(FlatPageAdmin):
@@ -34,13 +36,13 @@ class FlatPageAdmin(FlatPageAdmin):
         (None, {'fields': ('title', 'description', 'content', 'tag', 'publishied',)}),
         ('Дополнительные настройки', {
             'classes': ('collapse',),
-            'fields': ('block', 'show', 'url', 'parent', 'order','sites', 'registration_required', 'template_name',),
+            'fields': ('block', 'show', 'url', 'parent', 'order', 'sites', 'registration_required', 'template_name',),
         }),
     )
     formfield_overrides = {
-        models.TextField: {'widget': CKEditor }
+        models.TextField: {'widget': CKEditor}
     }
-    list_display = ('title', 'show', 'url','parent',)
+    list_display = ('title', 'show', 'url', 'parent',)
     list_filter = ('sites', )
     search_fields = ('url', 'title')
     ordering = ('order', 'title',)

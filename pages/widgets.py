@@ -7,9 +7,11 @@ from django.utils.html import conditional_escape
 from django.utils.safestring import mark_safe
 from django.forms.utils import flatatt
 
+
 class LazyEncoder(DjangoJSONEncoder):
     pass
-    
+
+
 json_encode = LazyEncoder().encode
 
 
@@ -21,10 +23,10 @@ DEFAULT_CONFIG = {
     'toolbar_Full': [
                 ['Undo', 'Redo', '-', 'Bold', 'Italic', '-', 'NumberedList', 'BulletedList', 'Format', 'RemoveFormat'],
                 ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'],
-                ['Link', 'Unlink','Anchor', 'Image', 'HorizontalRule'],
-                ['Templates','Templates2', 'ShowBlocks', 'Source', '-', 'Maximize', ],
+                ['Link', 'Unlink', 'Anchor', 'Image', 'HorizontalRule'],
+                ['Templates', 'Templates2', 'ShowBlocks', 'Source', '-', 'Maximize', ],
         ],
-    'toolbar': 'Full', #Basic
+    'toolbar': 'Full',  # Basic
     # 'removePlugins': ','.join([
     #             'stylesheetparser',
     #     ]),
@@ -39,9 +41,9 @@ DEFAULT_CONFIG = {
 }
 
 
-class CKEditor(forms.Textarea):        
+class CKEditor(forms.Textarea):
     class Media:
-        js = ('pages/ckeditor/ckeditor_init.js','pages/ckeditor/ckeditor.js')
+        js = ('pages/ckeditor/ckeditor_init.js', 'pages/ckeditor/ckeditor.js')
 
     def __init__(self, config_name='default', extra_plugins=None, external_plugin_resources=None, *args, **kwargs):
         super(CKEditor, self).__init__(*args, **kwargs)
@@ -58,13 +60,13 @@ class CKEditor(forms.Textarea):
             value = ''
         final_attrs = self.build_attrs(self.attrs, attrs, name=name)
         template_name = 'pages/tpl_ckeditor.html'
-        external_plugin_resources = [[force_text(a), force_text(b), force_text(c)]for a, b, c in self.external_plugin_resources]                                     
+        external_plugin_resources = [[force_text(a), force_text(b), force_text(c)]for a, b, c in self.external_plugin_resources]
         context = {
             'final_attrs': flatatt(final_attrs),
             'value': conditional_escape(value),
             'id': final_attrs['id'],
             'config': json_encode(self.config),
-            'external_plugin_resources': json_encode(external_plugin_resources)    
+            'external_plugin_resources': json_encode(external_plugin_resources)
         }
         return mark_safe(render_to_string(template_name, context))
 
@@ -73,5 +75,3 @@ class CKEditor(forms.Textarea):
         if extra_attrs:
             attrs.update(extra_attrs)
         return attrs
-            
-    
