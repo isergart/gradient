@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 from django.contrib.flatpages.admin import FlatPageAdmin
-from .widgets import CKEditor
+from .widgets import Editor
 from .models import *
 
 
@@ -40,7 +40,7 @@ class FlatPageAdmin(FlatPageAdmin):
         }),
     )
     formfield_overrides = {
-        models.TextField: {'widget': CKEditor}
+        models.TextField: {'widget': Editor}
     }
     list_display = ('title', 'show', 'url', 'parent',)
     list_filter = ('sites', )

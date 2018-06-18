@@ -1,7 +1,23 @@
-{% load static %}
-<div class="django-ckeditor-widget" data-field-id="{{id}}" style="display: inline-block;">
-    <textarea{{ final_attrs }} data-processed="0" data-config="{{ config }}" data-external-plugin-resources="{{ external_plugin_resources }}" data-id="{{id}}" data-type="ckeditortype">{{ value }}</textarea>
+{# {% load static %} #}
+<div style="display: inline-block; padding: 1px; border-radius: 0.3rem; background: gray;">
+<textarea {{ final_attrs }} id="{{id}}" >{{ value }}</textarea>
 </div>
+{# <script src="{% static "__config.js" %}"/></script> #}
+<script>
+
+CKEDITOR.replace( '{{id}}', {
+    language: 'fr',
+    uiColor: '#ffffff',
+    width: 900,
+    height:200,
+});
+
+</script>
+
+
+<!-- <div class="django-ckeditor-widget" data-field-id="{{id}}" style="display: inline-block;">
+    <textarea{{ final_attrs }} data-processed="0" data-config="{{ config }}" data-external-plugin-resources="{{ external_plugin_resources }}" data-id="{{id}}" data-type="ckeditortype">{{ value }}</textarea>
+</div> -->
 
 <!-- <div style=" max-width: 100px;">
         <textarea name="{{ widget.name }}" {% include "pages/tpl_attrs.html" %}>{% if widget.value %}{{ widget.value }}{% endif %}</textarea>

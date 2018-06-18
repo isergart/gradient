@@ -14,7 +14,7 @@
 // Replace the <textarea id="editor1"> with a CKEditor
 // instance, using default configuration.
 CKEDITOR.replace( 'editor', {
-    language: 'ru',
+    language: 'fr',
     uiColor: '#ffffff',
     width: 900,
     height:400,
