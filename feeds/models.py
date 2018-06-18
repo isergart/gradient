@@ -13,7 +13,8 @@ from django.utils.encoding import python_2_unicode_compatible
 CATEGORY_CHOICES = (
     ('a', 'Промышленное холодоснабжение'),
     ('b', 'Внутренние инженерные системы'),
-)
+    )
+
 
 @python_2_unicode_compatible
 class Project(models.Model):
@@ -41,8 +42,8 @@ class Post(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, verbose_name='дата создания', help_text='Время и дата не будет отображаться на сайте!')
     date_publishied = models.DateTimeField(default=datetime.now, verbose_name='дата публикации', help_text='Время публикации поста. Отображается на сайте')
     tag = models.ManyToManyField(Tag, related_name='news_tags', related_query_name='news_tag', verbose_name='метки', help_text='SEO поле предназначено для мета-тегов keywords')
-    social_button = models.BooleanField(default=True, verbose_name='разрешить перепост', help_text='Добавить кнопку: "Поделиться" в Facebok, Twitter, Вконтакт, Одноклассники, Мой мир.<br> Для перепоста на свою страницу')
-    user = models.ForeignKey(User, verbose_name='автор поста', on_delete=models.CASCADE,)  # editable=False, default=False
+    social_button = models.BooleanField(default=True, verbose_name='разрешить перепост', help_text='Добавить кнопку: "Поделиться" в Facebok, Twitter, Вконтакт, Одноклассники, Мой мир.<br> Для перепоста на свою страницу')  # editable=False, default=False
+    user = models.ForeignKey(User, verbose_name='автор поста', on_delete=models.CASCADE,)
     image = models.ForeignKey('Image', related_name='news_images', blank=True, on_delete=models.CASCADE, null=True)
 
     class Meta:
@@ -61,7 +62,7 @@ class Post(models.Model):
             number = random.randint(1, 6)
             self.image = 'news/random/pic' + str(number) + '.jpg'
         super(Post, self).save()
-                
+
 
 # Create Image for Feeds
 @python_2_unicode_compatible

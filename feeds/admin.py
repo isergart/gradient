@@ -17,15 +17,15 @@ class ImageInline(admin.TabularInline):
 class NewsAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,
-         {'fields': [ 'title', 'description', 'content', 'tag', 'publishied',],
-         'classes': ['extrapretty']}),
+         {'fields': ['title', 'description', 'content', 'tag', 'publishied', ],
+          'classes': ['extrapretty']}),
         ('Дополнительные настройки', {
-        'fields': ['teaser', 'slug', 'user', 'date_created', 'social_button',],
+            'fields': ['teaser', 'slug', 'user', 'date_created', 'social_button', ],
          'classes': ['collapse'],
          }),
-    ]
-    
-    inlines = [ImageInline,]
+         ]
+
+    inlines = [ImageInline, ]
     filter_gorisontal = ('draft',)
     list_filter = ('publishied', 'user',)
     list_display = ('title', 'user', 'publishied',)
@@ -35,8 +35,8 @@ class NewsAdmin(admin.ModelAdmin):
     readonly_fields = ('date_created', 'social_button',)
     search_fields = ('title',)
     raw_id_fields = ['tag']
-    
-    
+
+
 @admin.register(Project)
 class ProjectsAdmin(admin.ModelAdmin):
     pass
