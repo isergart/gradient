@@ -11,7 +11,7 @@ class Editor(forms.Textarea):
     class Media:
         js = (
             'pages/ckeditor/ckeditor.js',
-            '__config.js',
+            'pages/ckeditor/init.js',
          )
 
     def __init__(self, *args, **kwargs):
@@ -21,7 +21,7 @@ class Editor(forms.Textarea):
         if value is None:
             value = ''
         final_attrs = self.build_attrs(self.attrs, attrs, name=name)
-        template_name = 'pages/tpl_ckeditor.html'
+        template_name = 'pages/tpl_editor.html'
         context = {
             'final_attrs': flatatt(final_attrs),
             'value': conditional_escape(value),
