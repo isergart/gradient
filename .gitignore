@@ -9,5 +9,5 @@ requirements.txt
 index.wsgi
 __pycache__
 README.md
-#LICENSE
+LICENSE
 .ropeproject/
