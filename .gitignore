@@ -1,13 +1,12 @@
 # Ignored files and folders
 
+requirements.txt
 migrations/
 *.sqlite3
 *.DS_Store
 *.pyc
-requirements.txt
 .htaccess
 index.wsgi
-__pycache__
 README.md
 LICENSE
 .ropeproject/
