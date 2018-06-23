@@ -14,11 +14,11 @@ CKEDITOR.editorConfig = function( config ) {
     // config.extraPlugins = 'easyimage';
     // config.cloudServices_tokenUrl = 'http://127.0.0.1:8000/cs-token-endpoint';
     // config.cloudServices_uploadUrl = 'http://127.0.0.1:8000/media/uploads/';
-    config.extraPlugins = 'autogrow,templates,showblocks,filebrowser,uploadwidget,glyphicons';
+    config.extraPlugins = 'autogrow,templates,showblocks';
     config.autoGrow_minHeight = 250;
     config.autoGrow_maxHeight = 1000;
     config.toolbarGroups = [
-        { name: 'styles', groups: [ 'styles', 'templates', 'showblocks', 'filebrowser', 'uploadwidget', 'glyphicons' ] },
+        { name: 'styles', groups: [ 'styles', 'templates', 'showblocks', ] },
 		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
 		{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
 		{ name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
