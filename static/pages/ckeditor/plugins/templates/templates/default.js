@@ -1,28 +1,87 @@
-﻿
-/*
- Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
- For licensing, see LICENSE.md or http://ckeditor.com/license
-*/
-CKEDITOR.addTemplates("default", {
-    imagesPath: CKEDITOR.getUrl(CKEDITOR.plugins.getPath("templates") + "templates/images/"),
-    templates: [
-    //     {
-    //     title: "Изображение с заголовком",
-    //     image: "template1.gif",
-    //     description: "Одно основное изображение с заголовком и текстом, которые окружают изображение.",
-    //     html: '<h1>hello1</h1>'
-    // },
-        {
-        title: "Двухколоночный шаблон",
-        image: "template2.gif",
-        description: "Шаблон, определяющий два столбца, каждый из которых содержит заголовок и текст.",
-        html: '<div class="row"><div class="col-6"><h5>Заголовок h5 для левой колонки</h5><p>Содержание левой колонки. Колонка адаптивная и изменяется в замисимости от размера экрана устройства</p></div><div class="col-6"><h3>Заголовок h3 для правой колонки</h3><p>Содержание параграфа p правой колонки. Колонка адаптивная и изменяется в замисимости от размера экрана устройства</p></div></div><p>Здесь находится следующий абзац текста p. Редактируйте и дополняйте его по своему усмотрению. Вы можете копировать колонки и чередовать обычный текст с ними. С двумя и тремя колонками - текст лучше воспринимаются. Вся конструкция определяется кодом: div class="row" div class="col-6" Правая сторона .... div и div class="col-6" Левая сторона ..../div /div Где номер col-6 говорит делить блок на 2 колонки, col-4 на 3 колонки, а col-12 не делить вовсе. Их можно сочетать и чередовать друг с другом. Все это оборачивается в div class="row" ... наши колонки ... /div что говорит шаблону о том что вы используете колонки </p>'
-    },
-    //     {
-    //     title: "Текст и Таблица",
-    //     image: "template3.gif",
-    //     description: "Заголовок с текстом и таблицей.",
-    //     html: '<h1>hello3</h1>'
-    // }
-    ]
-});
+/**
+ * @license Copyright (c) 2003-2018, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ */
+
+// Register a templates definition set named "default".
+CKEDITOR.addTemplates( 'default', {
+	// The name of sub folder which hold the shortcut preview images of the
+	// templates.
+	imagesPath: CKEDITOR.getUrl( CKEDITOR.plugins.getPath( 'templates' ) + 'templates/images/' ),
+
+	// The templates definitions.
+	templates: [ {
+		title: 'Image and Title',
+		image: 'template1.gif',
+		description: 'One main image with a title and text that surround the image.',
+		html: '<h3>' +
+			// Use src=" " so image is not filtered out by the editor as incorrect (src is required).
+			'<img src=" " alt="" style="margin-right: 10px" height="100" width="100" align="left" />' +
+			'Type the title here' +
+			'</h3>' +
+			'<p>' +
+			'Type the text here' +
+			'</p>'
+	},
+	{
+		title: 'Strange Template',
+		image: 'template2.gif',
+		description: 'A template that defines two columns, each one with a title, and some text.',
+		html: '<table cellspacing="0" cellpadding="0" style="width:100%" border="0">' +
+			'<tr>' +
+				'<td style="width:50%">' +
+					'<h3>Title 1</h3>' +
+				'</td>' +
+				'<td></td>' +
+				'<td style="width:50%">' +
+					'<h3>Title 2</h3>' +
+				'</td>' +
+			'</tr>' +
+			'<tr>' +
+				'<td>' +
+					'Text 1' +
+				'</td>' +
+				'<td></td>' +
+				'<td>' +
+					'Text 2' +
+				'</td>' +
+			'</tr>' +
+			'</table>' +
+			'<p>' +
+			'More text goes here.' +
+			'</p>'
+	},
+	{
+		title: 'Text and Table',
+		image: 'template3.gif',
+		description: 'A title with some text and a table.',
+		html: '<div style="width: 80%">' +
+			'<h3>' +
+				'Title goes here' +
+			'</h3>' +
+			'<table style="width:150px;float: right" cellspacing="0" cellpadding="0" border="1">' +
+				'<caption style="border:solid 1px black">' +
+					'<strong>Table title</strong>' +
+				'</caption>' +
+				'<tr>' +
+					'<td>&nbsp;</td>' +
+					'<td>&nbsp;</td>' +
+					'<td>&nbsp;</td>' +
+				'</tr>' +
+				'<tr>' +
+					'<td>&nbsp;</td>' +
+					'<td>&nbsp;</td>' +
+					'<td>&nbsp;</td>' +
+				'</tr>' +
+				'<tr>' +
+					'<td>&nbsp;</td>' +
+					'<td>&nbsp;</td>' +
+					'<td>&nbsp;</td>' +
+				'</tr>' +
+			'</table>' +
+			'<p>' +
+				'Type the text here' +
+			'</p>' +
+			'</div>'
+	} ]
+} );

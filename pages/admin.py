@@ -17,21 +17,21 @@ class TagAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 
-# Create new CarouselAdmin
+# Create CarouselAdmin
 @admin.register(Carousel)
 class CarouselAdmin(admin.ModelAdmin):
     pass
 
 
-# Create new CarouselAdmin
+# Create SnippetAdmin
 @admin.register(Snippet)
 class SnippetAdmin(admin.ModelAdmin):
     pass
 
 
-# Define a new FlatPageAdmin
+# Create PageAdmin
 @admin.register(Page)
-class FlatPageAdmin(FlatPageAdmin):
+class PageAdmin(FlatPageAdmin):
     fieldsets = (
         (None, {'fields': ('title', 'description', 'content', 'tag', 'publishied',)}),
         ('Дополнительные настройки', {
@@ -39,11 +39,9 @@ class FlatPageAdmin(FlatPageAdmin):
             'fields': ('block', 'show', 'url', 'parent', 'order', 'sites', 'registration_required', 'template_name',),
         }),
     )
-    formfield_overrides = {
-        models.TextField: {'widget': Editor}
-    }
+    formfield_overrides = {models.TextField: {'widget': Editor}, }
     list_display = ('title', 'show', 'url', 'parent',)
-    list_filter = ('sites', )
+    list_filter = ('sites',)
     search_fields = ('url', 'title')
     ordering = ('order', 'title',)
     list_per_page = 15

@@ -55,13 +55,13 @@ class Post(models.Model):
     def __str__(self):
         return '%s' % self.title
 
-    def save(self, **kwargs):
-        if not self.image:
-            self.image = Image.objects.get(id=1)
-        else:
-            number = random.randint(1, 6)
-            self.image = 'news/random/pic' + str(number) + '.jpg'
-        super(Post, self).save()
+    # def save(self, **kwargs):
+    #     if not self.image:
+    #         self.image = Image.objects.get(id=1)
+    #     else:
+    #         number = random.randint(1, 6)
+    #         self.image = 'news/random/pic' + str(number) + '.jpg'
+    #     super(Post, self).save()
 
 
 # Create Image for Feeds
@@ -70,7 +70,7 @@ class Image(models.Model):
     title = models.CharField('заголовок:', max_length=50, blank=True, help_text='Не обязательное поле!')
     image = models.ImageField('изображение', upload_to='uploads/%Y/%m/%d/', blank=True, help_text='Размер изображения не более 1Mб. Горизонтального вида')
     watermark = models.BooleanField('защита', default=0, help_text='Добавляется водяной знак на фотографию')
-    project = models.ForeignKey(Project, related_name='feed_image', verbose_name='галерея', on_delete=models.CASCADE, unique=False)
+    # project = models.ForeignKey(Project, related_name='feed_image', verbose_name='галерея', on_delete=models.CASCADE, unique=False)
     news = models.ForeignKey(Post, related_name='post_image', verbose_name='галерея', on_delete=models.CASCADE, unique=False)
 
     class Meta:

@@ -2,9 +2,11 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
+from pages.widgets import Editor
 from .models import *
 
 
+# Create ImageAdmin
 class ImageInline(admin.TabularInline):
     model = Image
     extra = 0
@@ -13,6 +15,7 @@ class ImageInline(admin.TabularInline):
     fields = ('image', 'title', 'watermark',)
 
 
+# Create NewsAdmin
 @admin.register(Post)
 class NewsAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -24,7 +27,7 @@ class NewsAdmin(admin.ModelAdmin):
          'classes': ['collapse'],
          }),
          ]
-
+    formfield_overrides = {models.TextField: {'widget': Editor}, }
     inlines = [ImageInline, ]
     filter_gorisontal = ('draft',)
     list_filter = ('publishied', 'user',)
@@ -37,6 +40,7 @@ class NewsAdmin(admin.ModelAdmin):
     raw_id_fields = ['tag']
 
 
+# Create ProjectsAdmin
 @admin.register(Project)
 class ProjectsAdmin(admin.ModelAdmin):
     pass
