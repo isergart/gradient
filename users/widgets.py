@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.contrib.admin.widgets import AdminFileWidget
 from django.utils.safestring import mark_safe
 from django.conf import settings
@@ -5,14 +6,12 @@ from PIL import Image
 import os
 
 
-def thumbnail(image_path):
-    """Missing docstring"""
-    absolute_url = os.path.join(settings.MEDIA_ROOT, image_path)
-    return u'<img src="%s" alt="%s" />' % (absolute_url, image_path)
-
-
 class AdminImage(AdminFileWidget):
-    # """A FileField Widget that displays an image instead of a file path if the current file is an image."""
+    """A FileField Widget that displays an image instead of a file path if the current file is an image."""
+    def thumbnail(image_path):
+        """Missing docstring"""
+        absolute_url = os.path.join(settings.MEDIA_ROOT, image_path)
+        return u'<img src="%s" alt="%s" />' % (absolute_url, image_path)
 
     def render(self, name, value, attrs=None):
         output = []

@@ -9,15 +9,19 @@ from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 
 
-# Create Project model
-CATEGORY_CHOICES = (
-    ('a', 'Промышленное холодоснабжение'),
-    ('b', 'Внутренние инженерные системы'),
-    )
+# CATEGORY_CHOICES = (
+#     ('a', 'Промышленное холодоснабжение'),
+#     ('b', 'Внутренние инженерные системы'),
+#     )
 
 
 @python_2_unicode_compatible
 class Project(models.Model):
+    """Create Project model"""
+    CATEGORY_CHOICES = (
+        ('a', 'Промышленное холодоснабжение'),
+        ('b', 'Внутренние инженерные системы'),
+        )
     category = models.CharField(max_length=1, choices=CATEGORY_CHOICES, verbose_name='тип обьекта', default='a')
     pass
 
@@ -27,12 +31,12 @@ class Project(models.Model):
         verbose_name_plural = 'обьект'
 
     def __str__(self):
-        return self.id
+        return self.category
 
 
-# Create News model
 @python_2_unicode_compatible
 class Post(models.Model):
+    """Create News model"""
     title = models.CharField(max_length=100, verbose_name='заголовок:', help_text='Не более 100 символов (включая пробелы)')
     description = models.CharField('описание:', max_length=200, blank=False, help_text='SEO поле предназначено для мета-тега description')
     teaser = models.CharField(max_length=200, verbose_name='аннотация:', blank=True, help_text='Не обязательное поле! Заполните краткое описание поста. Не более 200 символов (включая пробелы).<br> Если оставить пустым, то возьмутся первые 200 символов из содержания статьи')
@@ -64,9 +68,9 @@ class Post(models.Model):
     #     super(Post, self).save()
 
 
-# Create Image for Feeds
 @python_2_unicode_compatible
 class Image(models.Model):
+    """Create Image for Feeds"""
     title = models.CharField('заголовок:', max_length=50, blank=True, help_text='Не обязательное поле!')
     image = models.ImageField('изображение', upload_to='uploads/%Y/%m/%d/', blank=True, help_text='Размер изображения не более 1Mб. Горизонтального вида')
     watermark = models.BooleanField('защита', default=0, help_text='Добавляется водяной знак на фотографию')
