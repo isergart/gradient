@@ -6,9 +6,11 @@ from django.contrib.flatpages.models import FlatPage
 from django.utils.encoding import python_2_unicode_compatible
 
 
-# Create Tag model
 @python_2_unicode_compatible
 class Tag(models.Model):
+    """
+    Create Tag model
+    """
     name = models.CharField(max_length=50, verbose_name='имя метки', help_text='Укажите ключевое слово(мета тег)')
     slug = models.SlugField('URL', help_text='укажите на латинице', unique=True)
     cloud = models.BooleanField(verbose_name='отображать', default=False, help_text='Если указано, метка видна в облаке тегов.')
@@ -23,9 +25,11 @@ class Tag(models.Model):
         return '%s' % self.name
 
 
-# Create Carousel model
 @python_2_unicode_compatible
 class Carousel(models.Model):
+    """
+    Create Carousel model
+    """
     title = models.CharField(max_length=50, verbose_name='заголовок:', blank=False, help_text='Не обязательное поле!')
     description = models.CharField('описание:', max_length=2000, blank=False, help_text='развернутое описание заголовка')
     image = models.ImageField(upload_to='carousel', max_length=100, blank=True, verbose_name='изображение', help_text='Размер не более 1Mб. Горизонтального вида')
@@ -44,27 +48,31 @@ class Carousel(models.Model):
         return '%s' % self.title
 
 
-# Create Snippet model
 @python_2_unicode_compatible
-class Snippet(models.Model):
+class Chank(models.Model):
+    """
+    Create Chank model
+    """
     title = models.CharField(max_length=50, verbose_name='название:', blank=False, help_text='Не обязательное поле!')
-    label = models.CharField(max_length=50, verbose_name='идентификатор:', blank=False, help_text='Метка снипета!')
+    label = models.CharField(max_length=50, verbose_name='идентификатор:', blank=False, help_text='Метка чанка!')
     code = models.TextField('код:', max_length=2000, blank=False, help_text='Код сниппета')
-    show = models.BooleanField('активировать', default=False, help_text="Если отмечено, сниппет будет работать")
+    show = models.BooleanField('активировать', default=False, help_text="Если отмечено, чанк начнет работать")
 
     class Meta:
-        db_table = 'pages_snippet'
-        verbose_name = 'сниппет'
-        verbose_name_plural = 'сниппет'
+        db_table = 'pages_chank'
+        verbose_name = 'чанк'
+        verbose_name_plural = 'чанк'
         ordering = ('title',)
 
     def __str__(self):
         return '%s' % self.title
 
 
-# Redefine old FlatPage model
 @python_2_unicode_compatible
 class Page(FlatPage):
+    """
+    Redefine old FlatPage model
+    """
     description = models.CharField('описание', max_length=200, blank=False, help_text='SEO поле предназначено для мета-тега description')
     block = models.TextField(verbose_name='дополнительное поле', blank=True, help_text='Если указано, появится  выделенный блок текста')
     tag = models.ManyToManyField(Tag, related_name='tags', related_query_name='tag', verbose_name='метки', help_text='SEO поле предназначено для мета-тегов keywords')

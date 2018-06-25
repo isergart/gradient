@@ -7,9 +7,11 @@ from .widgets import Editor
 from .models import *
 
 
-# Create new TagAdmin
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
+    """
+    Create new TagAdmin
+    """
     model = Tag
     list_display = ('name', 'cloud',)
     ordering = ('-name',)
@@ -17,21 +19,27 @@ class TagAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 
-# Create CarouselAdmin
 @admin.register(Carousel)
 class CarouselAdmin(admin.ModelAdmin):
+    """
+    Create CarouselAdmin
+    """
     pass
 
 
-# Create SnippetAdmin
-@admin.register(Snippet)
-class SnippetAdmin(admin.ModelAdmin):
+@admin.register(Chank)
+class ChankAdmin(admin.ModelAdmin):
+    """
+    Create SnippetAdmin
+    """
     pass
 
 
-# Create PageAdmin
 @admin.register(Page)
 class PageAdmin(FlatPageAdmin):
+    """
+    Create PageAdmin
+    """
     fieldsets = (
         (None, {'fields': ('title', 'description', 'content', 'tag', 'publishied',)}),
         ('Дополнительные настройки', {

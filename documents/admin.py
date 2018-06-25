@@ -10,21 +10,30 @@ from .models import *
 
 @admin.register(Vacancy)
 class VacancyAdmin(admin.ModelAdmin):
+    """
+    Vacancy
+    """
     formfield_overrides = {models.TextField: {'widget': Editor}, }
     pass
 
 
 @admin.register(Partner)
 class PartnerAdmin(admin.ModelAdmin):
+    """
+    Partner
+    """
     pass
 
 
 @admin.register(Block)
 class BlockAdmin(admin.ModelAdmin):
+    """
+    Block
+    """
     # class Meta:
-        # widgets = {
-        #     'teaser': Textarea(attrs={'cols': 80, 'rows': 20}),
-        # }
+    #     widgets = {
+    #         'teaser': Textarea(attrs={'cols': 80, 'rows': 20}),
+    #     }
     formfield_overrides = {
             models.TextField: {'widget': Editor},
     }

@@ -25,7 +25,7 @@ class User(AbstractUser):
         ordering = ('username',)
 
     def __str__(self):
-        return "%s" % self.username
+        return "%s" % self.get_full_name()
 
     def save(self, **kwargs):
         if not self.avatar:

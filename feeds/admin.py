@@ -6,8 +6,10 @@ from pages.widgets import Editor
 from .models import *
 
 
-# Create ImageAdmin
 class ImageInline(admin.TabularInline):
+    """
+    Create ImageAdmin
+    """
     model = Image
     extra = 0
     verbose_name = 'файл'
@@ -15,9 +17,11 @@ class ImageInline(admin.TabularInline):
     fields = ('image', 'title', 'watermark',)
 
 
-# Create NewsAdmin
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
+    """
+    Create PostAdmin
+    """
     fieldsets = [
         (None,
          {'fields': ['title', 'description', 'content', 'tag', 'publishied', ],
@@ -40,7 +44,9 @@ class PostAdmin(admin.ModelAdmin):
     raw_id_fields = ['tag']
 
 
-# Create ProjectsAdmin
 @admin.register(Project)
 class ProjectsAdmin(admin.ModelAdmin):
+    """
+    ProjectsAdmin
+    """
     pass

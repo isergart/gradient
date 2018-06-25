@@ -8,7 +8,9 @@ from .models import *
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    """UserAdmin"""
+    """
+    UserAdmin
+    """
     fieldsets = (
         (None, {
             'fields': ('username', 'password', 'show')}),

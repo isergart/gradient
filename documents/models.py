@@ -7,7 +7,9 @@ from django.utils.encoding import python_2_unicode_compatible
 
 @python_2_unicode_compatible
 class Vacancy(models.Model):
-    """Create Vacancy model"""
+    """
+    Create Vacancy model
+    """
     vacancy = models.CharField('вакансия:', max_length=30, blank=True, help_text='Предлагаемая должность')
     description = models.TextField('требования:', max_length=200, blank=False, help_text='Требование к кандидату')
     added_date = models.DateField('дата добавления:', null=True, blank=True)
@@ -25,7 +27,9 @@ class Vacancy(models.Model):
 
 @python_2_unicode_compatible
 class Partner(models.Model):
-    """Create Partner model"""
+    """
+    Create Partner model
+    """
     name = models.CharField('партнер:', max_length=30, blank=False, help_text='Название организации')
     url = models.URLField('URL:', max_length=30, blank=True, help_text='URL сайта организации')
     location = models.CharField('адрес:', max_length=30, blank=True)
@@ -46,7 +50,9 @@ class Partner(models.Model):
 
 @python_2_unicode_compatible
 class Block(models.Model):
-    """Create Block model"""
+    """
+    Create Block model
+    """
     CATEGORY_CHOICES = (
         ('1', 'Промышленное холодоснабжение'),
         ('2', 'Внутренние инженерные системы'),
@@ -80,7 +86,9 @@ class Block(models.Model):
 
 @python_2_unicode_compatible
 class Image(models.Model):
-    """Create Image for Block model"""
+    """
+    Create Image for Block model
+    """
     title = models.CharField('заголовок:', max_length=50, blank=True, help_text='Не обязательное поле!')
     description = models.CharField('описание:', max_length=2000, blank=False, help_text='SEO поле предназначено для мета-тега description')
     image = models.ImageField('изображение', upload_to='uploads/%Y/%m/%d/', blank=True, help_text='Размер изображения не более 1Mб. Горизонтального вида')
