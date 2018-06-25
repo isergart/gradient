@@ -17,7 +17,7 @@ def carousel():
     return {'carousel': carousel}
 
 
-@register.inclusion_tag('pages/tpl_snippet.html')
-def snippet():
-    code = Snippet.objects.all().filter(show=True)
+@register.inclusion_tag('pages/tpl_chank.html')
+def chank():
+    code = Chank.objects.all().filter(show=True)
     return {'code': code}

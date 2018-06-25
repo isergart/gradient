@@ -49,4 +49,5 @@ class ProjectsAdmin(admin.ModelAdmin):
     """
     ProjectsAdmin
     """
+    radio_fields = {'category': admin.HORIZONTAL}  # VERICAL
     pass

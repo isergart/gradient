@@ -8,6 +8,17 @@ from django import forms
 from .models import *
 
 
+class ImageInline(admin.TabularInline):
+    """
+    Create ImageAdmin
+    """
+    model = Image
+    extra = 0
+    verbose_name = 'файл'
+    verbose_name_plural = 'фотогалерея'
+    fields = ('image', 'title', 'watermark',)
+
+
 @admin.register(Vacancy)
 class VacancyAdmin(admin.ModelAdmin):
     """
@@ -34,6 +45,8 @@ class BlockAdmin(admin.ModelAdmin):
     #     widgets = {
     #         'teaser': Textarea(attrs={'cols': 80, 'rows': 20}),
     #     }
+    inlines = [ImageInline, ]
+    radio_fields = {'category': admin.VERTICAL}  # HORIZONTAL
     formfield_overrides = {
             models.TextField: {'widget': Editor},
     }

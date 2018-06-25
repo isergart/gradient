@@ -30,13 +30,13 @@ class Partner(models.Model):
     """
     Create Partner model
     """
-    name = models.CharField('партнер:', max_length=30, blank=False, help_text='Название организации')
+    name = models.CharField('организация:', max_length=30, blank=False, help_text='Название организации. Пример: ООО "Ромашка"')
     url = models.URLField('URL:', max_length=30, blank=True, help_text='URL сайта организации')
     location = models.CharField('адрес:', max_length=30, blank=True)
     phone = models.CharField('телефон:', max_length=30, blank=True)
     fax = models.CharField('факс:', max_length=30, blank=True)
     logo = models.ImageField('логотип', upload_to='partner', max_length=100, blank=False, help_text='Размер не более 1Mб')
-    show = models.BooleanField('отображать', default=False, help_text='Отображать партнера на сайте')
+    show = models.BooleanField('отображать', default=False, help_text='Отображать на главной')
 
     class Meta:
         db_table = 'documents_partner'
@@ -69,15 +69,15 @@ class Block(models.Model):
     description = models.CharField('описание:', max_length=200, blank=False, help_text='SEO поле предназначено для мета-тега description')
     teaser = models.CharField(max_length=200, verbose_name='аннотация:', blank=True, help_text='Не обязательное поле! Заполните краткое описание поста. Не более 200 символов (включая пробелы).<br> Если оставить пустым, то возьмутся первые 200 символов из содержания статьи')
     content = models.TextField(verbose_name='содержание:', blank=True, help_text='Наполнение статьи.')
-    image_button = models.ImageField(upload_to='uploads/%Y/%m/%d/', verbose_name='изображение', blank=True, help_text='Размер изображения не более 1Mб. Горизонтального вида')
+    image_button = models.ImageField(upload_to='uploads/%Y/%m/%d/', verbose_name='иконка', blank=True, help_text='Размер изображения не более 1Mб. Горизонтального вида')
     show_button = models.BooleanField('отображать', default=False, help_text='Если отмечено, страница будет показана в главном меню')
-    image = models.ForeignKey('Image', related_name='block_images', on_delete=models.CASCADE, blank=True, null=True)
-    category = models.CharField('тип блока:', max_length=1, choices=CATEGORY_CHOICES, default='1')
+    image = models.ForeignKey('Image', verbose_name='изображение:', related_name='block_images', on_delete=models.CASCADE, blank=True, null=True)
+    category = models.CharField('категория:', max_length=1, choices=CATEGORY_CHOICES, default='1')
 
     class Meta:
         db_table = 'documents_block'
         verbose_name = 'блок'
-        verbose_name_plural = 'документ'
+        verbose_name_plural = 'блок'
         ordering = ('id',)
 
     def __str__(self):
