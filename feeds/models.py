@@ -34,8 +34,8 @@ class Project(models.Model):
 @python_2_unicode_compatible
 class Post(models.Model):
     title = models.CharField(max_length=100, verbose_name='заголовок:', help_text='Не более 100 символов (включая пробелы)')
-    description = models.CharField('описание:', max_length=2000, blank=False, help_text='SEO поле предназначено для мета-тега description')
-    teaser = models.TextField(max_length=200, verbose_name='аннотация:', blank=True, help_text='Не обязательное поле! Заполните краткое описание поста. Не более 200 символов (включая пробелы).<br> Если оставить пустым, то возьмутся первые 200 символов из содержания статьи')
+    description = models.CharField('описание:', max_length=200, blank=False, help_text='SEO поле предназначено для мета-тега description')
+    teaser = models.CharField(max_length=200, verbose_name='аннотация:', blank=True, help_text='Не обязательное поле! Заполните краткое описание поста. Не более 200 символов (включая пробелы).<br> Если оставить пустым, то возьмутся первые 200 символов из содержания статьи')
     content = models.TextField(verbose_name='содержание:', blank=True, help_text='Наполнение статьи.')
     slug = models.SlugField('URL:', help_text='человекоподобный URL поста, латинскими буквами')
     publishied = models.BooleanField('публикация', default=False, help_text="Если не указано, страница не будет доступна для просмотра")

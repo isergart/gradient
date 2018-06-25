@@ -60,8 +60,8 @@ class Block(models.Model):
         ('10', 'Письма'),
     )
     title = models.CharField(max_length=100, verbose_name='заголовок:', help_text='Не более 100 символов (включая пробелы)')
-    description = models.CharField('описание:', max_length=2000, blank=False, help_text='SEO поле предназначено для мета-тега description')
-    teaser = models.TextField(max_length=200, verbose_name='аннотация:', blank=True, help_text='Не обязательное поле! Заполните краткое описание поста. Не более 200 символов (включая пробелы).<br> Если оставить пустым, то возьмутся первые 200 символов из содержания статьи')
+    description = models.CharField('описание:', max_length=200, blank=False, help_text='SEO поле предназначено для мета-тега description')
+    teaser = models.CharField(max_length=200, verbose_name='аннотация:', blank=True, help_text='Не обязательное поле! Заполните краткое описание поста. Не более 200 символов (включая пробелы).<br> Если оставить пустым, то возьмутся первые 200 символов из содержания статьи')
     content = models.TextField(verbose_name='содержание:', blank=True, help_text='Наполнение статьи.')
     image_button = models.ImageField(upload_to='uploads/%Y/%m/%d/', verbose_name='изображение', blank=True, help_text='Размер изображения не более 1Mб. Горизонтального вида')
     show_button = models.BooleanField('отображать', default=False, help_text='Если отмечено, страница будет показана в главном меню')

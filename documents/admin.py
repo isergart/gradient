@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 from pages.widgets import Editor
+from django import forms
+# from django.forms import *
 from .models import *
 
 
@@ -19,5 +21,11 @@ class PartnerAdmin(admin.ModelAdmin):
 
 @admin.register(Block)
 class BlockAdmin(admin.ModelAdmin):
-    formfield_overrides = {models.TextField: {'widget': Editor}, }
+    # class Meta:
+        # widgets = {
+        #     'teaser': Textarea(attrs={'cols': 80, 'rows': 20}),
+        # }
+    formfield_overrides = {
+            models.TextField: {'widget': Editor},
+    }
     pass

@@ -17,7 +17,7 @@ class ImageInline(admin.TabularInline):
 
 # Create NewsAdmin
 @admin.register(Post)
-class NewsAdmin(admin.ModelAdmin):
+class PostAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,
          {'fields': ['title', 'description', 'content', 'tag', 'publishied', ],

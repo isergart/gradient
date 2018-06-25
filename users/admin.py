@@ -2,10 +2,10 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
+from .widgets import AdminImage
 from .models import *
 
 
-# Create new UserAdmin
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
     fieldsets = (
@@ -27,16 +27,9 @@ class UserAdmin(admin.ModelAdmin):
         }),
     )
 
-    # class Media:
-    #     js = ['users/js/display_thumbs.js']
-
+    formfield_overrides = {models.ImageField: {'widget': AdminImage}, }
     list_display = ('username', 'avatar', 'email', 'first_name', 'last_name', 'is_staff', 'show',)
     list_filter = ('is_staff', 'is_superuser', 'is_active', 'groups')
     search_fields = ('username', 'first_name', 'last_name', 'email')
     ordering = ('username',)
     filter_horizontal = ('groups', 'user_permissions',)
-
-    # def view_image(self, obj):
-    #     return u'<img src="%s">' % (obj.img.url)
-    # view_image.allow_tags = True
-    # view_image.short_description = 'аватар'

@@ -4,16 +4,16 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.encoding import python_2_unicode_compatible
-from django.db.models.signals import post_save, pre_delete
+# from django.db.models.signals import post_save, pre_delete
 # from .utils import *
 
 
 # Create User model
 @python_2_unicode_compatible
 class User(AbstractUser):
-    '''
+    """
     Expansion of django.contrib.auth.models.User fields: id, username, password, first_name, last_name, email, os_active, is_staff, is_superuser, group, user_permissions, last_login, date_joined
-    '''
+    """
     third_name = models.CharField('отчество:', max_length=30, blank=True)
     avatar = models.ImageField('аватар', upload_to='users/', max_length=250, blank=True, help_text='Размер не более 1Mб')
     position = models.CharField('должность:', max_length=30, blank=True)
@@ -31,7 +31,7 @@ class User(AbstractUser):
 
     def save(self, **kwargs):
         if not self.avatar:
-            self.avatar = 'users/default_user.jpg'
+            self.avatar = 'users/img/default_user.jpg'
         super(User, self).save()
 
         # def get_thumbnail_html(self):

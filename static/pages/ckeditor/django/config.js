@@ -15,8 +15,8 @@ CKEDITOR.editorConfig = function( config ) {
     // config.cloudServices_tokenUrl = 'http://127.0.0.1:8000/cs-token-endpoint';
     // config.cloudServices_uploadUrl = 'http://127.0.0.1:8000/media/uploads/';
     config.extraPlugins = 'autogrow,templates,showblocks';
-    config.autoGrow_minHeight = 250;
-    config.autoGrow_maxHeight = 1000;
+    config.autoGrow_minHeight = 100;
+    config.autoGrow_maxHeight = 800;
     config.toolbarGroups = [
         { name: 'styles', groups: [ 'styles', 'templates', 'showblocks', ] },
 		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
