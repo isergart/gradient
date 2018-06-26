@@ -114,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'  # en-us, ru-ru
+LANGUAGE_CODE = 'en-US'  # en-US, ru-RU
 
 TIME_ZONE = 'Europe/Moscow'
 
@@ -147,9 +147,9 @@ MEDIAFILES_DIRS = [
 
 # Localization files
 
-LOCALE_PATHS = [
-    os.path.join(BASE_DIR, "locale"), ]
-print(LOCALE_PATHS)
+# LOCALE_PATHS = [
+#     os.path.join(BASE_DIR, "locale"), ]
+# print(LOCALE_PATHS)
 
 # Memcached config
 

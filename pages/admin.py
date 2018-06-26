@@ -46,8 +46,8 @@ class PageAdmin(FlatPageAdmin):
         (_('Дополнительные настройки'), {
             'classes': ('collapse',),
             'fields': ('block', 'show', 'url', 'parent', 'order', 'sites', 'registration_required', 'template_name',),
-        }),
-    )
+            }),
+        )
     formfield_overrides = {models.TextField: {'widget': Editor}, }
     list_display = ('title', 'show', 'url', 'parent',)
     list_filter = ('sites',)
