@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from django.utils.translation import ugettext_lazy as _
 
 from django.contrib import admin
 from django.contrib.flatpages.admin import FlatPageAdmin
@@ -42,7 +43,7 @@ class PageAdmin(FlatPageAdmin):
     """
     fieldsets = (
         (None, {'fields': ('title', 'description', 'content', 'tag', 'publishied',)}),
-        ('Дополнительные настройки', {
+        (_('Дополнительные настройки'), {
             'classes': ('collapse',),
             'fields': ('block', 'show', 'url', 'parent', 'order', 'sites', 'registration_required', 'template_name',),
         }),
@@ -57,5 +58,5 @@ class PageAdmin(FlatPageAdmin):
 
 
 admin.site.unregister(FlatPage)
-admin.site.site_header = 'Компания Градиент'
-admin.site.index_title = 'Управление сайтом'
+admin.site.site_header = _('Компания Градиент')
+admin.site.index_title = _('Site management')

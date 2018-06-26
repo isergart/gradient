@@ -41,11 +41,12 @@ INSTALLED_APPS = [
     'pages',
     'users',
     'feeds',
-]
+ ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     # 'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     # 'django.middleware.cache.FetchFromCacheMiddleware',
@@ -54,7 +55,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-]
+ ]
 
 ROOT_URLCONF = 'gradient.urls'
 
@@ -72,10 +73,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],
+                ],
+            },
         },
-    },
-]
+ ]
 
 WSGI_APPLICATION = 'gradient.wsgi.application'
 
@@ -87,8 +88,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+        }
+ }
 
 #
 # Password validation
@@ -97,23 +98,23 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
+        },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
+        },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
+        },
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
+        },
+ ]
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'ru-ru'
+LANGUAGE_CODE = 'en-us'  # en-us, ru-ru
 
 TIME_ZONE = 'Europe/Moscow'
 
@@ -131,7 +132,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     # '/Users/sergart/Sites/gradient/static/',
-]
+ ]
 # STATIC_ROOT = '/home/c/cl184131/gradient/public_html/static/'
 
 # Media files
@@ -140,9 +141,15 @@ MEDIA_URL = '/media/'
 MEDIAFILES_DIRS = [
   os.path.join(BASE_DIR, "media"),
   # '/Users/sergart/Sites/gradient/media/',
-]
+ ]
 # MEDIA_ROOT = '/Users/sergart/Sites/gradient/media/'
 # MEDIA_ROOT = '/home/c/cl184131/gradient/public_html/media/'
+
+# Localization files
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, "locale"), ]
+# print(LOCALE_PATHS)
 
 # Memcached config
 

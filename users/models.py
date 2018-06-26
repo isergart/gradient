@@ -9,7 +9,7 @@ from django.utils.encoding import python_2_unicode_compatible
 @python_2_unicode_compatible
 class User(AbstractUser):
     """
-    Create User model
+    Create abstract user model
     Expansion of django.contrib.auth.models.User fields: id, username, password, first_name, last_name, email, os_active, is_staff, is_superuser, group, user_permissions, last_login, date_joined
     """
     third_name = models.CharField('отчество:', max_length=30, blank=True)
