@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from django.utils.translation import ugettext_lazy as _
 
 from django.contrib import admin
 from .widgets import AdminImage
@@ -14,21 +15,21 @@ class UserAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             'fields': ('username', 'password', 'show')}),
-        ('Персональная информация', {
+        (_('Персональная информация'), {
             'fields': ('avatar', 'first_name', 'third_name', 'last_name', 'position', 'email', 'phone',)}),
-        ('Права доступа', {
+        (_('Права доступа'), {
             'classes': ('collapse',),
             'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
-        ('Важные даты', {
+        (_('Важные даты'), {
             'classes': ('collapse',),
             'fields': ('last_login', 'date_joined',)}),
-    )
+        )
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
             'fields': ('username', 'password1', 'password2'),
-        }),
-    )
+            }),
+        )
 
     formfield_overrides = {models.ImageField: {'widget': AdminImage}, }
     list_display = ('username', 'avatar', 'email', 'first_name', 'last_name', 'is_staff', 'show',)

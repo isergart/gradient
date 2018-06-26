@@ -149,7 +149,7 @@ MEDIAFILES_DIRS = [
 
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, "locale"), ]
-# print(LOCALE_PATHS)
+print(LOCALE_PATHS)
 
 # Memcached config
 

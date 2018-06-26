@@ -59,7 +59,7 @@
         </p>
         {{ cl.formset.non_form_errors }}
     {% endif %}
-     <p style="color:#9d4c4c; font-size: 14px;">Кастомизация приложения Настройки</p>
+     <p style="color:#9d4c4c; font-size: 14px;">{% trans 'Кастомизация приложения Настройки'%}</p>
     <div class="module{% if cl.has_filters %} filtered{% endif %}" id="changelist">
       {% block search %}{% search_form cl %}{% endblock %}
       {% block date_hierarchy %}{% date_hierarchy cl %}{% endblock %}

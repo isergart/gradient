@@ -1,4 +1,5 @@
-<h4>Templatetag Tag is worked!</h4>
+{% load i18n %}
+<h4>{% trans 'Templatetag Tag is worked!'%}</h4>
 <p>{% for Tag in tag %}
 {{ tag.all }}
 {% endfor %}<p>

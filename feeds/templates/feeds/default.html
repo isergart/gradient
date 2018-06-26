@@ -1,6 +1,7 @@
 {% extends 'flatpages/default.html' %}
 {% load staticfiles %}
+{% load i18n %}
 {% block titles %}{{ flatpage.title }}{% endblock %}
 {% block title %}{{ flatpage.title }}{% endblock %}
 {% block description %}{{ flatpage.page.description }}{% endblock %}
-{% block content %}<h1>Поздравляю!</h1><p>Новости успешно работают!. Этот текст генерируется из приложения news</p><hr>{{ flatpage.content }}{% endblock %}
+{% block content %}<h1>{% trans 'Поздравляю!'%}</h1><p>{% trans 'Новости успешно работают!. Этот текст генерируется из приложения news'%}</p><hr>{{ flatpage.content }}{% endblock %}

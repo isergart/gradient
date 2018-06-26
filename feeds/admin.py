@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from django.utils.translation import ugettext_lazy as _
 
 from django.contrib import admin
 from pages.widgets import Editor
@@ -12,8 +13,8 @@ class ImageInline(admin.TabularInline):
     """
     model = Image
     extra = 0
-    verbose_name = 'файл'
-    verbose_name_plural = 'фотогалерея'
+    verbose_name = _('файл')
+    verbose_name_plural = _('фотогалерея')
     fields = ('image', 'title', 'watermark',)
 
 
@@ -26,7 +27,7 @@ class PostAdmin(admin.ModelAdmin):
         (None,
          {'fields': ['title', 'description', 'content', 'tag', 'publishied', ],
           'classes': ['extrapretty']}),
-        ('Дополнительные настройки', {
+        (_('Дополнительные настройки'), {
             'fields': ['teaser', 'slug', 'user', 'date_created', 'social_button', ],
          'classes': ['collapse'],
          }),

@@ -48,7 +48,7 @@
     </p>
     {{ adminform.form.non_field_errors }}
 {% endif %}
-<p style="color:#9d4c4c; font-size: 14px;">Кастомизация приложения Настройки</p>
+<p style="color:#9d4c4c; font-size: 14px;">{% trans 'Кастомизация приложения Настройки'%}</p>
 {% block field_sets %}
 {% for fieldset in adminform %}
   {% include "admin/includes/fieldset.html" %}

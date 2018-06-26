@@ -1,4 +1,5 @@
 {% load staticfiles flatpages pages feeds documents users %}
+{% load i18n %}
 <!doctype html>
 <html lang="en">
 
@@ -10,7 +11,7 @@
     <meta name="author" content="Соглашение сторон">
     <link rel="icon" href="{% static "pages/favicon.ico" %}">
 
-    <title>{% block titles %}Компания Градиент - {{ flatpage.title }}{% endblock %}</title>
+    <title>{% block titles %}{% trans 'Компания Градиент'%} - {{ flatpage.title }}{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static "pages/css/bootstrap.min.css" %}" rel="stylesheet">
@@ -23,7 +24,7 @@
 
     <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
       <div class="container">
-        <a class="navbar-brand" href="/">Градиент</a>
+        <a class="navbar-brand" href="/">{% trans 'Градиент'%}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Site navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -179,7 +180,7 @@
     <!-- Begin footer content -->
     <footer class="footer">
         <div class="container">
-            <p>2010 - {% now "Y" %}&nbsp;&copy;&nbsp;ООО Градиент &#124; <a href="/agreement">Соглашение</a></p>
+            <p>2010 - {% now "Y" %}&nbsp;&copy;&nbsp;{% trans 'ООО Градиент'%} &#124; <a href="/agreement">{% trans 'Соглашение'%}</a></p>
         </div>
     </footer>
 
