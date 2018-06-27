@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.utils.translation import ugettext_lazy as _
-
 from django.contrib import admin
 from django.contrib.flatpages.admin import FlatPageAdmin
 from .widgets import Editor
@@ -45,8 +44,8 @@ class PageAdmin(FlatPageAdmin):
         (None, {'fields': ('title', 'description', 'content', 'tag', 'publishied',)}),
         (_('Дополнительные настройки'), {
             'classes': ('collapse',),
-            'fields': ('block', 'show', 'url', 'parent', 'order', 'sites', 'registration_required', 'template_name',),
-            }),
+            'fields': ('block', 'show', 'url', 'parent', 'sites', 'order', 'template_name',),
+            }),  # 'sites', 'registration_required',
         )
     formfield_overrides = {models.TextField: {'widget': Editor}, }
     list_display = ('title', 'show', 'url', 'parent',)
