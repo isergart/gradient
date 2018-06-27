@@ -44,8 +44,8 @@ class PageAdmin(FlatPageAdmin):
         (None, {'fields': ('title', 'description', 'content', 'tag', 'publishied',)}),
         (_('Дополнительные настройки'), {
             'classes': ('collapse',),
-            'fields': ('block', 'show', 'url', 'parent', 'sites', 'order', 'template_name',),
-            }),  # 'sites', 'registration_required',
+            'fields': ('block', 'show', 'url', 'parent', 'order', 'template_name',),
+            }),
         )
     formfield_overrides = {models.TextField: {'widget': Editor}, }
     list_display = ('title', 'show', 'url', 'parent',)
@@ -58,4 +58,4 @@ class PageAdmin(FlatPageAdmin):
 
 admin.site.unregister(FlatPage)
 admin.site.site_header = _('Компания Градиент')
-admin.site.index_title = _('Site management')
+admin.site.index_title = _('Управление сайтом')

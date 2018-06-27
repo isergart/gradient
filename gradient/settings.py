@@ -131,19 +131,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    # '/Users/sergart/Sites/gradient/static/',
  ]
-# STATIC_ROOT = '/home/c/cl184131/gradient/public_html/static/'
+# STATIC_ROOT = '~/gradient/public_html/static/'
 
 # Media files
 
 MEDIA_URL = '/media/'
 MEDIAFILES_DIRS = [
   os.path.join(BASE_DIR, "media"),
-  # '/Users/sergart/Sites/gradient/media/',
  ]
 # MEDIA_ROOT = '/Users/sergart/Sites/gradient/media/'
-# MEDIA_ROOT = '/home/c/cl184131/gradient/public_html/media/'
+# MEDIA_ROOT = '~/gradient/public_html/media/'
 
 # Localization files
 

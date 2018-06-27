@@ -7,4 +7,4 @@ from django.apps import AppConfig
 
 class PagesConfig(AppConfig):
     name = 'pages'
-    verbose_name = _('Settings v0.1')
+    verbose_name = _('Настойки v0.1')
