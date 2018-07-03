@@ -9,9 +9,7 @@ from .models import *
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
-    """
-    Create new TagAdmin
-    """
+    """Create new TagAdmin"""
     model = Tag
     list_display = ('name', 'cloud',)
     ordering = ('-name',)
@@ -21,25 +19,19 @@ class TagAdmin(admin.ModelAdmin):
 
 @admin.register(Carousel)
 class CarouselAdmin(admin.ModelAdmin):
-    """
-    Create CarouselAdmin
-    """
+    """Create CarouselAdmin"""
     pass
 
 
 @admin.register(Chank)
 class ChankAdmin(admin.ModelAdmin):
-    """
-    Create SnippetAdmin
-    """
+    """Create SnippetAdmin"""
     pass
 
 
 @admin.register(Page)
 class PageAdmin(FlatPageAdmin):
-    """
-    Create PageAdmin
-    """
+    """Create PageAdmin"""
     fieldsets = (
         (None, {'fields': ('title', 'description', 'content', 'tag', 'publishied',)}),
         (_('Дополнительные настройки'), {

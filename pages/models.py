@@ -11,9 +11,7 @@ from django.utils.encoding import python_2_unicode_compatible
 
 @python_2_unicode_compatible
 class Tag(models.Model):
-    """
-    Create tag model
-    """
+    """Create tag model"""
     name = models.CharField(max_length=50, verbose_name=_('имя'), help_text=_('Укажите ключевое слово(мета тег)'))
     slug = models.SlugField(_('URL'), help_text=_('укажите на латинице'), unique=True)
     cloud = models.BooleanField(verbose_name=_('показывать'), default=False, help_text=_('Если указано, метка видна в облаке тегов.'))
@@ -30,9 +28,7 @@ class Tag(models.Model):
 
 @python_2_unicode_compatible
 class Carousel(models.Model):
-    """
-    Create carousel model
-    """
+    """Create carousel model"""
     title = models.CharField(max_length=50, verbose_name=_('заголовок:'), blank=False, help_text=_('Не обязательное поле!'))
     description = models.CharField(_('описание:'), max_length=2000, blank=False, help_text=_('развернутое описание заголовка'))
     image = models.ImageField(upload_to='carousel', max_length=100, blank=True, verbose_name=_('изображение'), help_text=_('Размер не более 1Mб. Горизонтального вида'))
@@ -53,9 +49,7 @@ class Carousel(models.Model):
 
 @python_2_unicode_compatible
 class Chank(models.Model):
-    """
-    Create chank model
-    """
+    """Create chank model"""
     title = models.CharField(max_length=50, verbose_name=_('название:'), blank=False, help_text=_('Не обязательное поле!'))
     label = models.CharField(max_length=50, verbose_name=_('идентификатор:'), blank=False, help_text=_('Метка чанка!'))
     code = models.TextField(_('код:'), max_length=2000, blank=False, help_text=_('Код чанка'))
@@ -82,9 +76,7 @@ class CustomFlatPage(FlatPage):
 
 @python_2_unicode_compatible
 class Page(CustomFlatPage):
-    """
-    Inheritance and overrides the standard flatpages model: 'sites', 'registration_required',
-    """
+    """Inheritance and overrides the standard flatpages model: 'sites', 'registration_required',"""
     description = models.CharField(_('описание'), max_length=200, blank=False, help_text=_('SEO поле предназначено для мета-тега description'))
     block = models.TextField(verbose_name=_('дополнительное поле'), blank=True, help_text=_('Если указано, появится  выделенный блок текста'))
     tag = models.ManyToManyField(Tag, related_name='tags', related_query_name='tag', verbose_name=_('метки'), help_text=_('SEO поле предназначено для мета-тегов keywords'))
