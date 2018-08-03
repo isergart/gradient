@@ -12,9 +12,7 @@ from django.utils.translation import ugettext_lazy as _
 
 @python_2_unicode_compatible
 class Project(models.Model):
-    """
-    Create Project model
-    """
+    """Create Project model"""
     CATEGORY_CHOICES = (
         ('a', _('Промышленное холодоснабжение')),
         ('b', _('Внутренние инженерные системы')),
@@ -33,9 +31,7 @@ class Project(models.Model):
 
 @python_2_unicode_compatible
 class Post(models.Model):
-    """
-    Create News model
-    """
+    """Create News model"""
     title = models.CharField(max_length=100, verbose_name=_('заголовок:'), help_text=_('Не более 100 символов (включая пробелы)'))
     description = models.CharField(_('описание:'), max_length=200, blank=False, help_text=_('SEO поле предназначено для мета-тега description'))
     teaser = models.CharField(max_length=200, verbose_name=_('аннотация:'), blank=True, help_text=_('Не обязательное поле! Заполните краткое описание поста. Не более 200 символов (включая пробелы).<br> Если оставить пустым, то возьмутся первые 200 символов из содержания статьи'))
@@ -69,9 +65,7 @@ class Post(models.Model):
 
 @python_2_unicode_compatible
 class Image(models.Model):
-    """
-    Create Image for Feeds
-    """
+    """Create Image for Feeds"""
     title = models.CharField(_('заголовок:'), max_length=50, blank=True, help_text=_('Не обязательное поле!'))
     image = models.ImageField(_('изображение'), upload_to='uploads/%Y/%m/%d/', blank=True, help_text=_('Размер изображения не более 1Mб. Горизонтального вида'))
     watermark = models.BooleanField(_('защита'), default=0, help_text=_('Добавляется водяной знак на фотографию'))
